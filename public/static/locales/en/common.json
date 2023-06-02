@@ -1,0 +1,84 @@
+
+{
+
+    "general" : {
+        "mainTItle": "",
+        "mainDescription": "",
+        "ogTitle": "",
+        "ogDescription": "",
+        "ogImage": "",
+        "copyrights": ""
+    },
+    "cookies": {
+        "acceptCtaAll": "Accept all",
+        "acceptCta": "Save settings",
+        "optionsCta": "Adjust the settings",
+        "copy": "We use cookies to ensure the proper functioning of the website and to improve your experience. You can manage them by clicking on “adjust settings“. See the <a href='/cookies-policy' target='_blank' rel='noopener' class='font-bold underline'> Cookie Policy </a> for more information.",
+        "items": [
+            {
+                "title": "Cookies required",
+                "copy": "The necessary cookies provide essential functionality. A website without cookies cannot function properly and can only be turned off by changing your browser settings."
+            },
+            {
+                "title": "Analytical cookies",
+                "copy": "Analytical cookies help us improve our website by collecting and reporting data on its use."
+            },
+            {
+                "title": "Marketing cookies",
+                "copy": "We use marketing cookies to improve the relevance of the campaigns you receive."
+            }
+        ]
+    },
+
+    "content" : {
+        "documentTitle" : "Adware",
+        "documentsSubTitle" : "Childline - Children & Youth",
+        "documentContent" : "<p>Adware is a form of spyware that records a user's web-surfing habits and displays advertisements targeted to their interests. Adware is sometimes offered in exchange for 'free' services, such as music downloads. Some common virus signposts include:</p><ul><li>files and data have been deleted or file names are changed</li><li>the computer takes longer to load programs or applications or web pages</li><li>the computer takes longer to boot, continually restarts or does not start at all</li><li>frequent system or program crashes.</li></ul><h2>Data subject rights list</h2><ol><li>Right of access (GDPR Article 15).</li><li>Right to rectification (GDPR Article 16).</li><li>Right to erasure or right to be forgotten with additional stipulations, among others, if personal data has been made public (GDPR Article 17).</li><li>Right to restriction of processing (GDPR Article 18).</li><li>Right to be informed (GDPR Article 19).</li><li>Right to data portability (GDPR Article 20).</li><li>Right to object (GDPR Article 21).</li><li>Right not to be subject to a decision based solely on automated processing, including profiling, which produces legal effects concerning him or her or similarly significantly affects him or her (GDPR Article 22).</li><ol><h2>Child Online Africa</h2><p><strong>Links:</strong></p><ul><li><a href='#'>Exposure to Inappropriate Content (Animation)</a></li><li><a href='#'>Manage your Screen Time (Animation)</li><li>Right to Play Online (Animation)</a></li><li><a href='#'>Right to Use Digital Media (Animation)</a></li><li><a href='#'>Online with Sango: A Story Book for Children</a></li><li><a href='#'>Workbook with Sango Including Agenda 2040 and the African Charter</a></li></ul>",
+        "documentContentSecond" : "<p><strong>Talk to a social worker specialised in child protection by phone, email or by Free online live chat. Free 24/7.</strong></p><p><a href ='#'>https://childlinett.org/</a><a href ='#'>https://web.facebook.com/TTChildLine?_rdc=1&_rdr</a><br><a href ='#'>https://www.instagram.com/childline_tt/</a><br><a href ='#'>https://twitter.com/childline_tt</a><br><a href ='#'>https://www.youtube.com/channel/UC2UBiTpfqT6O09A2zG69QC</a><br><a href ='#'>Android App: https://play.google.com/store/apps/details?id=org.childlinett.app</a><br><a href ='#'>iOS app: https://apps.apple.com/us/app/id1532546624</a></p>",
+        "documentsItems" : [
+            {"url" : "tel:868 626 3635", "title" : "868 626 3635", "phone" : "Call"},
+            {"url" : "tel:131", "title" : "131", "phone" : "Call"},
+            {"url" : "tel:800-4321", "title" : "800-4321", "phone" : "Call"},
+            {"url" : "mailto:support@childlinett.org", "title" : "support@childlinett.org"},
+            {"url" : "", "title" : "Language: EN"}
+        ],
+        "documentsTabs" : [
+            {
+                "title" : "What is insert Name of the Game?",
+                "content" : "Donec ullamcorper nulla non metus auctor fringilla. Aenean lacinia bibendum nulla sed consectetur.Sed posuere consectetur est at lobortis. Sed posuere consectetur est at lobortis. Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            },
+            {
+                "title" : "What is insert Name of the Game 2?",
+                "content" : "Donec ullamcorper nulla non metus auctor fringilla. Aenean lacinia bibendum nulla sed consectetur.Sed posuere consectetur est at lobortis. Sed posuere consectetur est at lobortis. Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            },
+            {
+                "title" : "What is insert Name of the Game 3?",
+                "content" : "Donec ullamcorper nulla non metus auctor fringilla. Aenean lacinia bibendum nulla sed consectetur.Sed posuere consectetur est at lobortis. Sed posuere consectetur est at lobortis. Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            },
+            {
+                "title" : "What is insert Name of the Game 4?",
+                "content" : "Donec ullamcorper nulla non metus auctor fringilla. Aenean lacinia bibendum nulla sed consectetur.Sed posuere consectetur est at lobortis. Sed posuere consectetur est at lobortis. Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            },
+            {
+                "title" : "What is insert Name of the Game 5?",
+                "content" : "Donec ullamcorper nulla non metus auctor fringilla. Aenean lacinia bibendum nulla sed consectetur.Sed posuere consectetur est at lobortis. Sed posuere consectetur est at lobortis. Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            }
+        ],
+        "tags": [
+            "Adult industry", "Advertisement", "Advocacy", "Age verification", "Antivirus software", "Application", "Avatar", "Banner Ads", "BitTorrent"
+        ]
+    },
+    "support" : {
+        "title" : "Have a question?",
+        "phone" : "1 234 56 78",
+        "email" : "info@support.io"
+    },
+    "error404" : {
+        "subtitle" : "404",
+        "title" : "This page could<br>not be found",
+        "cta_label" : "Home Page",
+        "cta_url" : "/"
+    }
+    
+    
+}

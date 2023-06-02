@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300 400 500 600 700;
+  font-display: swap;
+  src: url("/fonts/Quicksand-VariableFont_wght.ttf") format("ttf");
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -17,11 +24,13 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@apply bg-blue-100 text-white;
+font-family: 'Quicksand', sans-serif;
+font-feature-settings: "cv10" on, "cv06" on;
+}
+.bg-sidebar {
+  background: linear-gradient(162.34deg, #161A42 22.61%, rgba(22, 26, 66, 0) 118.29%);
+}
+.bg-active-nav-link {
+  background: linear-gradient(90deg, #00CDAC 0%, #02AAB0 100%);
 }
