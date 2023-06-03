@@ -1,8 +1,11 @@
 "use client"; // This is a client component
 import React, { ReactNode } from 'react'
-import Image from "next/image";
+import content from '../../../public/static/locales/en/common.json'
 import Avatar from './Avatar';
 import Avatars from './Avatars';
+import Balance from './Balance';
+import LeftGames from './LeftGames';
+import LeftHotGame from './LeftHotGame';
 
 const avatar = {
     name: "Character name",
@@ -40,6 +43,13 @@ const avatars = [
     }
 ]
 
+const balance = {
+    title: "Balance",
+    value : "4,668 DOL",
+    type: "eth",
+    url: "/#"
+}
+
 type Props = {
 
 }
@@ -56,6 +66,15 @@ const LeftAvatarSection = ({ }: Props) => {
             <Avatars
                 items={avatars}
             />
+            <Balance
+                title={balance.title}
+                ctaLabel={content.general.butAddLabel}
+                ctaLink={balance.url}
+                type={balance.type}
+                value={balance.value}
+            />
+            <LeftGames />
+            <LeftHotGame />
 
         </div>
     )

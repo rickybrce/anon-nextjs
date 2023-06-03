@@ -23,11 +23,19 @@ module.exports = {
           500:"#8454EB",
           600:"#161a42",
           700:"#464C8A",
+          800:"#495099",
+          900:"#212760",
         },
         'green': {
           100:"#075985",
           200: "#5EEAD4",
+          300:"#BAC1FF",
+          400:"#63FEFE",
+          500:"#5C6FC8",
         },
+        'purple': {
+          100:"#FF3EEC",
+        }
       },
       fontFamily: {
         thunder: ['"Quicksand", sans-serif'],

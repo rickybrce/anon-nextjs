@@ -38,6 +38,7 @@ font-feature-settings: "cv10" on, "cv06" on;
   background: linear-gradient(90deg, #2BC0E4 0%, #EAECC6 100%);
 }
 
+
  /* Scrollbar custom */
   /* width */
   .scroll-custom::-webkit-scrollbar {
@@ -47,7 +48,8 @@ font-feature-settings: "cv10" on, "cv06" on;
   
   /* Track */
   .scroll-custom::-webkit-scrollbar-track {
-    @apply bg-blue-700
+    @apply bg-blue-700;
+    border-radius: 20px;
   }
   
   /* Handle */

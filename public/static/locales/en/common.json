@@ -7,7 +7,16 @@
         "ogTitle": "",
         "ogDescription": "",
         "ogImage": "",
-        "copyrights": ""
+        "copyrights": "",
+        "butAddLabel" : "Add",
+        "active" : "Active",
+        "past" : "Active",
+        "position": "Position",
+        "your_games": "Your games",
+        "butSeeAllLabel" : "See all",
+        "dollarino_balance" : "Dollarino Balance",
+        "remaining" : "Remaining",
+        "hot_game" : "Hot game"
     },
     "cookies": {
         "acceptCtaAll": "Accept all",
