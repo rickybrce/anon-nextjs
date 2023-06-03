@@ -35,7 +35,10 @@ module.exports = {
         },
         'purple': {
           100:"#FF3EEC",
-        }
+        },
+        'gray': {
+          100:"#E2E4E9",
+        },
       },
       fontFamily: {
         thunder: ['"Quicksand", sans-serif'],

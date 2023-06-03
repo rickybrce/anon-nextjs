@@ -2,6 +2,7 @@ import Image from 'next/image'
 import LeftMenu from './components/LeftMenu'
 import LeftAvatarSection from './components/LeftAvatarSection'
 import TopNavigation from './components/TopNavigation'
+import ActiveGames from './components/ActiveGames'
 
 const leftMenu = [
   {
@@ -47,6 +48,7 @@ export default function Home() {
        <LeftAvatarSection />
        <div className='grow'>
         <TopNavigation />
+        <ActiveGames />
        </div>
       </div>
     </main>
