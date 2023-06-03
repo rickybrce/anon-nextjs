@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import LeftMenu from './components/LeftMenu'
+import LeftAvatarSection from './components/LeftAvatarSection'
 
 const leftMenu = [
   {
@@ -38,10 +39,11 @@ export default function Home() {
   
   return (
     <main className="">
-      <div className="px-[27px] py-[44px]">
+      <div className="px-[27px] py-[44px] flex">
        <LeftMenu 
        items={leftMenu}
        />
+       <LeftAvatarSection />
       </div>
     </main>
   )

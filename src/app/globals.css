@@ -37,3 +37,27 @@ font-feature-settings: "cv10" on, "cv06" on;
 .bg-line-gradient {
   background: linear-gradient(90deg, #2BC0E4 0%, #EAECC6 100%);
 }
+
+ /* Scrollbar custom */
+  /* width */
+  .scroll-custom::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  /* Track */
+  .scroll-custom::-webkit-scrollbar-track {
+    @apply bg-blue-700
+  }
+  
+  /* Handle */
+  .scroll-custom::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #2193B0 0%, #6DD5ED 100%);
+    border-radius: 20px;
+  }
+  
+  /* Handle on hover */
+  .scroll-custom::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(90deg, #2193B0 0%, #6DD5ED 100%);
+    border-radius: 20px;
+  }

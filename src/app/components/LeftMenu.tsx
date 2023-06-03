@@ -1,17 +1,19 @@
-import React, { ReactNode, useState } from 'react'
+"use client"; // This is a client component
+import React, { ReactNode } from 'react'
 import LeftMenuSIngleItem from './LeftMenuSIngleItem'
-import Link from 'next/link'
 import Image from "next/image";
 
 type Props = {
-    description?: string
     items?: any
 }
 
-const LeftMenu = ({ items, description }: Props) => {
+const LeftMenu = ({ items }: Props) => {
+    const handlelogout = () => {
+        console.log("logout")
+    }
 
     return (
-        <div className="flex flex-wrap items-stretch bg-sidebar min-h-[calc(100vh-88px)] border-[3px] border-green-100 w-[94px] rounded-[16px]">
+        <div className="flex flex-wrap items-stretch bg-sidebar min-h-[calc(100vh-88px)] border-[3px] border-green-100 w-[94px] rounded-[16px] mr-[17px]">
             <div className='w-full'>
                 <div className='mb-[11px] mt-[13px]'>
                     <Image
@@ -57,7 +59,7 @@ const LeftMenu = ({ items, description }: Props) => {
                     ))
                 )}
             </div>
-            <button className='w-full mb-[78px] mt-[38px] flex items-end'>
+            <button onClick={() => handlelogout ? handlelogout() : ""} className='w-full mb-[78px] mt-[38px] flex items-end'>
                 <Image
                     src={"/images/ic-log-out.svg"}
                     alt={""}
