@@ -34,3 +34,6 @@ font-feature-settings: "cv10" on, "cv06" on;
 .bg-active-nav-link {
   background: linear-gradient(90deg, #00CDAC 0%, #02AAB0 100%);
 }
+.bg-line-gradient {
+  background: linear-gradient(90deg, #2BC0E4 0%, #EAECC6 100%);
+}
