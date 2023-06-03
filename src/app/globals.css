@@ -37,6 +37,15 @@ font-feature-settings: "cv10" on, "cv06" on;
 .bg-line-gradient {
   background: linear-gradient(90deg, #2BC0E4 0%, #EAECC6 100%);
 }
+.bg-gradient-pool {
+  background: linear-gradient(162.34deg, #212554 100%, #515AB4 0%);
+}
+.button-gradient {
+  background: linear-gradient(180deg, #8454EB 0%, #3461FF 95.31%);
+}
+.button-bg {
+  background: linear-gradient(180deg, #080A1C 0%, #312E81 95.31%);
+}
 
 
  /* Scrollbar custom */

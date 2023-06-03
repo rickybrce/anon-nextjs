@@ -40,6 +40,9 @@ module.exports = {
       fontFamily: {
         thunder: ['"Quicksand", sans-serif'],
       },
+      screens: {
+        '3xl': '1780px',
+      }
     },
   },
   plugins: [plugin(function({ addUtilities }) {

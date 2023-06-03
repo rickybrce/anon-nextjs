@@ -16,7 +16,8 @@
         "butSeeAllLabel" : "See all",
         "dollarino_balance" : "Dollarino Balance",
         "remaining" : "Remaining",
-        "hot_game" : "Hot game"
+        "hot_game" : "Hot game",
+        "prize_pool" : "Prize pool"
     },
     "cookies": {
         "acceptCtaAll": "Accept all",

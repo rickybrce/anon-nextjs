@@ -57,7 +57,7 @@ type Props = {
 const LeftAvatarSection = ({ }: Props) => {
 
     return (
-        <div className="bg-sidebar min-h-[calc(100vh-88px)] border-[3px] border-green-100 w-[368px] rounded-[16px]">
+        <div className="bg-sidebar min-h-[calc(100vh-88px)] border-[3px] border-green-100 w-[368px] rounded-[16px] mr-[17px]">
             <Avatar
                 name={avatar.name}
                 nickname={avatar.nickname}
