@@ -20,7 +20,8 @@
         "prize_pool" : "Prize pool",
         "activeGames" : "Active games",
         "play_cta" : "Play",
-        "statistic" : "Statistic"
+        "statistic" : "Statistic",
+        "top_players" : "Top players"
     },
     "cookies": {
         "acceptCtaAll": "Accept all",

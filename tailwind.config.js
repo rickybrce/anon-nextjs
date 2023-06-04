@@ -33,6 +33,7 @@ module.exports = {
           300:"#BAC1FF",
           400:"#63FEFE",
           500:"#5C6FC8",
+          600:"#6EE7B7"
         },
         'purple': {
           100:"#FF3EEC",

@@ -1,8 +1,6 @@
 "use client"; // This is a client component
 import React, { ReactNode } from 'react'
 import content from '../../../public/static/locales/en/common.json'
-import Image from "next/image";
-import Link from 'next/link';
 import ButtonSeeAll from './buttons/ButtonSeeAll';
 import SingleStatistic from './SIngleStatistic';
 
@@ -48,7 +46,7 @@ const Statistic = ({ }: Props) => {
 
     return (
         <div className="w-full mt-[60px] pl-[19px]">
-            <div className="flex justify-between items-center mb-[33px]">
+            <div className="flex justify-between items-center">
                 <div className="font-w-700 text-[32px] leading-[40px] text-gray-100">{content.general.statistic}</div>
                 <ButtonSeeAll type="normal">{content.general.butSeeAllLabel}</ButtonSeeAll>
             </div>

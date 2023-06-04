@@ -4,6 +4,7 @@ import LeftAvatarSection from './components/LeftAvatarSection'
 import TopNavigation from './components/TopNavigation'
 import ActiveGames from './components/ActiveGames'
 import Statistic from './components/Statistic'
+import TopPlayers from './components/TopPlayers'
 
 const leftMenu = [
   {
@@ -51,6 +52,7 @@ export default function Home() {
         <TopNavigation />
         <ActiveGames />
         <Statistic />
+        <TopPlayers />
        </div>
       </div>
     </main>
