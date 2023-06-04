@@ -19,7 +19,8 @@
         "hot_game" : "Hot game",
         "prize_pool" : "Prize pool",
         "activeGames" : "Active games",
-        "play_cta" : "Play"
+        "play_cta" : "Play",
+        "statistic" : "Statistic"
     },
     "cookies": {
         "acceptCtaAll": "Accept all",

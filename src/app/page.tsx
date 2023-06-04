@@ -3,6 +3,7 @@ import LeftMenu from './components/LeftMenu'
 import LeftAvatarSection from './components/LeftAvatarSection'
 import TopNavigation from './components/TopNavigation'
 import ActiveGames from './components/ActiveGames'
+import Statistic from './components/Statistic'
 
 const leftMenu = [
   {
@@ -49,6 +50,7 @@ export default function Home() {
        <div className='grow'>
         <TopNavigation />
         <ActiveGames />
+        <Statistic />
        </div>
       </div>
     </main>
