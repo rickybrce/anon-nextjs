@@ -25,6 +25,7 @@ module.exports = {
           700:"#464C8A",
           800:"#495099",
           900:"#212760",
+          950:"#212554",
         },
         'green': {
           100:"#075985",
@@ -39,6 +40,9 @@ module.exports = {
         'gray': {
           100:"#E2E4E9",
         },
+        'cyan': {
+          500:"#06B6D4",
+        }
       },
       fontFamily: {
         thunder: ['"Quicksand", sans-serif'],

@@ -46,6 +46,9 @@ font-feature-settings: "cv10" on, "cv06" on;
 .button-bg {
   background: linear-gradient(180deg, #080A1C 0%, #312E81 95.31%);
 }
+.buttpn-play-bg {
+  background: linear-gradient(180deg, rgba(8, 10, 28, 0.23) 0%, #312E81 95.31%);
+}
 
 
  /* Scrollbar custom */

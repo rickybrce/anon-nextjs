@@ -5,6 +5,7 @@ import Image from "next/image";
 import ButtonMenu from './buttons/ButtonMenu';
 import Link from 'next/link';
 import ButtonSeeAll from './buttons/ButtonSeeAll';
+import SingleGame from './SIngleGame';
 
 
 const games = [
@@ -14,7 +15,9 @@ const games = [
         position: "23",
         remaining: "18h : 13m : 20s",
         limittype: "Soft limit",
-        active: true
+        url: "#",
+        active: true,
+        image: "/images/game-image-sample@2x.png"
     },
     {
         title: "Game 2",
@@ -22,7 +25,9 @@ const games = [
         position: "23",
         remaining: "18h : 13m : 20s",
         limittype: "Hard limit",
-        active: true
+        url: "#",
+        active: true,
+        image: "/images/game-image-sample@2x.png"
     },
     {
         title: "Game 3",
@@ -30,7 +35,9 @@ const games = [
         position: "23",
         remaining: "18h : 13m : 20s",
         limittype: "Soft limit",
-        active: false
+        url: "#",
+        active: false,
+        image: "/images/game-image-sample@2x.png"
     },
     {
         title: "Game 4",
@@ -38,7 +45,9 @@ const games = [
         position: "23",
         remaining: "18h : 13m : 20s",
         limittype: "Soft limit",
-        active: false
+        url: "#",
+        active: false,
+        image: "/images/game-image-sample@2x.png"
     }
 ]
 
@@ -50,9 +59,25 @@ const ActiveGames = ({ }: Props) => {
 
     return (
         <div className="w-full mt-[24px] pl-[19px]">
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center mb-[33px]">
                 <div className="font-w-700 text-[32px] leading-[40px] text-gray-100">{content.general.activeGames}</div>
                 <ButtonSeeAll type="normal">{content.general.butSeeAllLabel}</ButtonSeeAll>
+            </div>
+            <div className="grid grid-cols-4 gap-[27px]">
+                {games && (
+                    games.map((game, index) => (
+                        <SingleGame
+                            key={index}
+                            title={game.title}
+                            description={game.short_description}
+                            url={game.url}
+                            remaining={game.remaining}
+                            limittype={game.limittype}
+                            active={game.active}
+                            image={game.image}
+                        />
+                    ))
+                )}
             </div>
         </div>
     )
