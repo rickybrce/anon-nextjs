@@ -15,8 +15,8 @@ type Props = {
 const TopNavigation = ({ }: Props) => {
 
     return (
-        <div className="w-full bg-sidebar border-[3px] border-green-100 rounded-[16px] p-[20px] flex items-center justify-between">
-            <div className='flex items-center'>
+        <div className="w-full bg-sidebar border-[3px] border-green-100 rounded-[16px] p-[20px] md:flex items-center justify-between">
+            <div className='flex items-center mb-4 lg:mb-0'>
                 <Image
                     src={"/images/ic-music.svg"}
                     alt={""}
@@ -28,8 +28,8 @@ const TopNavigation = ({ }: Props) => {
                     max-w-[50px]
                     "
                 />
-                <div className='font-w-500 text-[20px] leading-[24px] tracing-[0.02em] ml-[10px]'>{content.general.prize_pool}</div>
-                <div className='relative bg-gradient-pool ml-3 font-w-700 text-[20px] leading-[28px] py-[14px] px-[28px] rounded-[16px]'>
+                <div className='font-w-500 text-[16px] 2xl:text-[20px] leading-[24px] tracing-[0.02em] ml-[10px]'>{content.general.prize_pool}</div>
+                <div className='relative bg-gradient-pool ml-3 font-w-700 text-[16px] 2xl:text-[20px] leading-[28px] py-[8px] lg:py-[14px] px-[28px] rounded-[16px]'>
                     <div className='absolute top-[2px] left-[2px] w-[calc(100%-4px)] h-[calc(100%-4px)] bg-sidebar z-0 rounded-[16px]'></div>
                     <span className="relative">100,668 $</span>
                 </div>

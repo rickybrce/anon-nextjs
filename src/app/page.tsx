@@ -43,12 +43,12 @@ export default function Home() {
   
   return (
     <main className="">
-      <div className="px-[27px] py-[44px] flex">
+      <div className="px-[16px] py-[16px] pt-14 lg:px-[27px] lg:py-[16px] lg:pt-14 xl:pt-[16px] lg:flex">
        <LeftMenu 
        items={leftMenu}
        />
        <LeftAvatarSection />
-       <div className='grow'>
+       <div className='grow overflow-hidden mt-4 lg:mt-0'>
         <TopNavigation />
         <ActiveGames />
         <Statistic />

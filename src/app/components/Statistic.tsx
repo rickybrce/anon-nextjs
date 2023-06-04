@@ -50,7 +50,7 @@ const Statistic = ({ }: Props) => {
                 <div className="font-w-700 text-[32px] leading-[40px] text-gray-100">{content.general.statistic}</div>
                 <ButtonSeeAll type="normal">{content.general.butSeeAllLabel}</ButtonSeeAll>
             </div>
-            <div className="grid grid-cols-3">
+            <div className="grid md:grid-cols-3 xl:grid-cols-3">
                 {games && (
                     games.map((game, index) => (
                         <SingleStatistic

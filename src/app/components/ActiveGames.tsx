@@ -63,7 +63,7 @@ const ActiveGames = ({ }: Props) => {
                 <div className="font-w-700 text-[32px] leading-[40px] text-gray-100">{content.general.activeGames}</div>
                 <ButtonSeeAll type="normal">{content.general.butSeeAllLabel}</ButtonSeeAll>
             </div>
-            <div className="grid grid-cols-4 gap-[27px]">
+            <div className="grid sm:grid-cols-2 2xl:grid-cols-4 gap-[27px]">
                 {games && (
                     games.map((game, index) => (
                         <SingleGame
