@@ -13,7 +13,7 @@ const LeftMenu = ({ items }: Props) => {
     }
 
     return (
-        <div className="flex flex-wrap items-stretch bg-sidebar min-h-[calc(100vh-88px)] border-[3px] border-green-100 w-[94px] rounded-[16px] mr-[17px]">
+        <div className="flex shrink-0 flex-wrap items-stretch bg-sidebar min-h-[calc(100vh-88px)] border-[3px] border-green-100 w-[94px] rounded-[16px] mr-[17px]">
             <div className='w-full'>
                 <div className='mb-[11px] mt-[13px]'>
                     <Image
