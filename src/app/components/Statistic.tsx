@@ -3,6 +3,7 @@ import React, { ReactNode } from 'react'
 import content from '../../../public/static/locales/en/common.json'
 import ButtonSeeAll from './buttons/ButtonSeeAll';
 import SingleStatistic from './SIngleStatistic';
+import Title from './Title';
 
 
 const games = [
@@ -47,7 +48,7 @@ const Statistic = ({ }: Props) => {
     return (
         <div className="w-full mt-[60px] pl-[19px]">
             <div className="flex justify-between items-center">
-                <div className="font-w-700 text-[32px] leading-[40px] text-gray-100">{content.general.statistic}</div>
+                <Title title={content.general.statistic} />
                 <ButtonSeeAll type="normal">{content.general.butSeeAllLabel}</ButtonSeeAll>
             </div>
             <div className="grid md:grid-cols-3 xl:grid-cols-3">

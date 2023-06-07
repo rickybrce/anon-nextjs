@@ -21,7 +21,13 @@
         "activeGames" : "Active games",
         "play_cta" : "Play",
         "statistic" : "Statistic",
-        "top_players" : "Top players"
+        "top_players" : "Top players",
+        "select_category" : "Select Category ",
+        "select_coin" : "Select Coin",
+        "select_leverage" : "Select Leverage",
+        "your_position" : "Your Position",
+        "bet" : "Bet"
+
     },
     "cookies": {
         "acceptCtaAll": "Accept all",

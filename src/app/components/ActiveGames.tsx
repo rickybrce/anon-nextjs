@@ -6,6 +6,7 @@ import ButtonMenu from './buttons/ButtonMenu';
 import Link from 'next/link';
 import ButtonSeeAll from './buttons/ButtonSeeAll';
 import SingleGame from './SIngleGame';
+import Title from './Title';
 
 
 const games = [
@@ -60,7 +61,7 @@ const ActiveGames = ({ }: Props) => {
     return (
         <div className="w-full mt-[24px] pl-[19px]">
             <div className="flex justify-between items-center mb-[33px]">
-                <div className="font-w-700 text-[32px] leading-[40px] text-gray-100">{content.general.activeGames}</div>
+                <Title title={content.general.activeGames} />
                 <ButtonSeeAll type="normal">{content.general.butSeeAllLabel}</ButtonSeeAll>
             </div>
             <div className="grid sm:grid-cols-2 2xl:grid-cols-4 gap-[27px]">

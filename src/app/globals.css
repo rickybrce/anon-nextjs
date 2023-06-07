@@ -49,6 +49,28 @@ font-feature-settings: "cv10" on, "cv06" on;
 .buttpn-play-bg {
   background: linear-gradient(180deg, rgba(8, 10, 28, 0.23) 0%, #312E81 95.31%);
 }
+.bg-checkbox-but {
+  background: rgba(22, 26, 66, 1.0);
+}
+.bg-checkbox-but:hover {
+  background: linear-gradient(180deg, #0a0c21 0%, #2f2c7e 95.31%);
+}
+.bg-checkbox-but-gradient {
+  background: linear-gradient(180deg, #3461FF 0%, #8454EB 95.31%);
+}
+.bg-checkbox-but-gradient:hover {
+  background: linear-gradient(180deg, #8454EB 0%, #3461FF 95.31%);
+}
+input.sr-only:checked ~ .bg-checkbox-but-gradient {
+  background: linear-gradient(180deg, #1FA2FF 0%, #A6FFCB 95.31%);
+}
+input.sr-only:checked ~ .bg-checkbox-but-gradient .bg-checkbox-but {
+  background: #466961;
+}
+input.sr-only:checked ~ .bg-checkbox-but-gradient .checked-image {
+  @apply block
+}
+
 
 
  /* Scrollbar custom */
