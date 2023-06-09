@@ -159,17 +159,17 @@ export default function Home() {
             items={breadcrumb}
           />
 
-          <div className='flex'>
+          <div className='xl:flex'>
 
             <div className=''>
 
               <Title title={content.general.select_category} classList='mb-4' />
-              <div className='flex flex-wrap items-center mb-[57px]'>
+              <div className='flex flex-wrap items-center mb-[20px] lg:mb-[57px]'>
                 {category.map((item, index) => (
                   <InputCheckbox
                     key={index}
                     label={item.title}
-                    className="mr-6"
+                    className="mr-2 xl:mr-4 lg:mb-4"
                     onChange={() => console.log('changed')}
                     active={item.active}
                     checked={item.selected}
@@ -178,12 +178,12 @@ export default function Home() {
               </div>
 
               <Title title={content.general.select_coin} classList='mb-4' />
-              <div className='flex flex-wrap items-center mb-[57px]'>
+              <div className='flex flex-wrap items-center mb-[20px] lg:mb-[57px]'>
                 {coins.map((item, index) => (
                   <InputCheckbox
                     key={index}
                     label={item.title}
-                    className="mr-6"
+                    className="mr-2 xl:mr-4 lg:mb-4"
                     onChange={() => console.log('changed')}
                     active={item.active}
                     checked={item.selected}
@@ -192,12 +192,12 @@ export default function Home() {
               </div>
 
               <Title title={content.general.select_leverage} classList='mb-4' />
-              <div className='flex flex-wrap items-center mb-[57px]'>
+              <div className='flex flex-wrap items-center mb-[20px] lg:mb-[57px]'>
                 {leverage.map((item, index) => (
                   <InputCheckbox
                     key={index}
                     label={item.title}
-                    className="mr-6"
+                    className="mr-2 xl:mr-4 lg:mb-4"
                     onChange={() => console.log('changed')}
                     active={item.active}
                     checked={item.selected}
@@ -206,12 +206,12 @@ export default function Home() {
               </div>
 
               <Title title={content.general.your_position} classList='mb-4' />
-              <div className='flex flex-wrap items-center mb-[57px]'>
+              <div className='flex flex-wrap items-center mb-[20px] lg:mb-[57px]'>
                 {position.map((item, index) => (
                   <InputCheckbox
                     key={index}
                     label={item.title}
-                    className="mr-6"
+                    className="mr-2 xl:mr-4 lg:mb-4"
                     onChange={() => console.log('changed')}
                     active={item.active}
                     checked={item.selected}
@@ -227,7 +227,7 @@ export default function Home() {
 
             </div>
 
-            <div className=' pl-[60px] max-w-[510px] pt-[70px]'>
+            <div className='3xl:pl-[60px] max-w-[510px] 3xl:pt-[70px]'>
               <div>
                 <div className='mb-[14px] font-700 text-[20px] leading-[28px] text-white'>Selected Coin chart</div>
                 <div className="p-6 border border-green-100 rounded-[16px]">
@@ -245,12 +245,12 @@ export default function Home() {
 
           </div>
 
-          <div className='flex items-center'>
-            <div className='w-6/12 flex justify-center'>
-              <ButtonSubmit className='w-full max-w-[344px]'>SUBMIT</ButtonSubmit>
+          <div className='xl:flex items-center'>
+            <div className='xl:w-6/12 xl:flex xl:justify-center'>
+              <ButtonSubmit className='w-full max-w-[344px] mt-6 xl:mt-0'>SUBMIT</ButtonSubmit>
             </div>
-            <div className='flex items-center w-6/12'>
-              <div className='font-700 text-[20px] leading-[25px] lg:pl-[40px] mr-[39px]'>Improve your chance to win</div>
+            <div className='xl:flex items-center xl:w-6/12 mt-6 xl:mt-0'>
+              <div className='font-700 text-[20px] leading-[25px] xl:pl-[40px] mr-6 xl:mr-[39px] mb-4 xl:mb-0'>Improve your chance to win</div>
               <ButtonDefault className='mr-5'>Share on social</ButtonDefault>
               <ButtonDefault>Boost</ButtonDefault>
             </div>

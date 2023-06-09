@@ -29,10 +29,10 @@ export default function InputCheckbox({ disabled = false,  active, label, checke
       <label className="relative inline-flex items-center cursor-pointer">
         <input onChange={(e) => (onChange ? onChange(e) : '')} type="checkbox" value="" className="sr-only peer" checked={checked} />
         <div className={` 
-        ${active ? 'pr-[20px]  lg:pr-[60px]' : 'bg-checkbox-but'}
-        px-[8px] 
+        ${active ? 'pr-[40px]  lg:pr-[60px]' : 'bg-checkbox-but'}
+        px-[16px] 
         min-h-[52px]
-        peer-checked:pr-[20px] 
+        peer-checked:pr-[40px] 
         lg:px-[33px] 
         lg:peer-checked:pr-[60px] 
         py-2

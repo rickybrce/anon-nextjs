@@ -13,8 +13,7 @@ const ButtonDefault = ({ disabled = false, onClick, children, className }: Props
         onClick={() => (onClick ? onClick() : null)}
         disabled={disabled}
         className={` ${className ? className : ""}
-        px-[8px] 
-        lg:px-[16px] 
+        px-[16px] 
         3xl:px-8
         py-2
         lg:py-4
