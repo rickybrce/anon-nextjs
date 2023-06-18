@@ -13,6 +13,7 @@ const ButtonSubmit = ({ disabled = false, onClick, children, className }: Props)
         onClick={() => (onClick ? onClick() : null)}
         disabled={disabled}
         className={` ${className ? className : ""}
+        ${disabled ? "bg-blue-900" : "button-gradient-two"}
         px-[8px] 
         lg:px-[16px] 
         3xl:px-[38px] 
@@ -24,8 +25,10 @@ const ButtonSubmit = ({ disabled = false, onClick, children, className }: Props)
         font-400
         text-center
         rounded-[16px] mb-4 lg:mb-0
-         text-white transition duration-300 button-gradient-two border-none hover:opacity-80 whitespace-nowrap focus:outline-none relative`}
-    ><div className='rounded-[16px] absolute top-[2px] left-[2px] w-[calc(100%-4px)] h-[calc(100%-4px)] button-bg-submit'></div>
+         text-white transition duration-300 border-none hover:opacity-80 whitespace-nowrap focus:outline-none relative`}
+    ><div className={`rounded-[16px] absolute top-[2px] left-[2px] w-[calc(100%-4px)] h-[calc(100%-4px)]
+    ${disabled ? "button-bg-submit-disabled" : "button-bg-submit"}
+    `}></div>
         <span className='relative'>{children}</span>
     </button>
 )

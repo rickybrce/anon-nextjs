@@ -53,6 +53,9 @@ font-feature-settings: "cv10" on, "cv06" on;
 .button-bg-submit {
   background: linear-gradient(180deg, #8454EB 0%, #3461FF 100%);
 }
+.button-bg-submit-disabled {
+  background: linear-gradient(180deg, #6C6C6C 0%, #4A4343 100%) !important;
+}
 .buttpn-play-bg {
   background: linear-gradient(180deg, rgba(8, 10, 28, 0.23) 0%, #312E81 95.31%);
 }

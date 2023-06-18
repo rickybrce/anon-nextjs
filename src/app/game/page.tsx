@@ -11,6 +11,7 @@ import ButtonBet from '../components/buttons/ButtonBet';
 import ButtonPlaceBet from '../components/buttons/ButtonPlaceBet';
 import ButtonSubmit from '../components/buttons/ButtonSubmit';
 import ButtonDefault from '../components/buttons/ButtonDefault';
+import { useState } from 'react';
 
 const leftMenu = [
   {
@@ -145,6 +146,105 @@ const position = [
 ]
 
 export default function Home() {
+  const [selectedCategories, setSelectedCategories] = useState<any[]>([])
+  const [selectedCoins, setSelectedCoins] = useState<any[]>([])
+  const [selectedLeverages, setSelectedLeverages] = useState<any[]>([])
+  const [selectedPositions, setSelectedPositions] = useState<any[]>([])
+
+  const [showCoins, setShowCoins] = useState(false)
+  const [showLeverages, setShowLeverages] = useState(false)
+  const [showPositions, setShowPositions] = useState(false)
+  const [showBet, setShowBet] = useState(false)
+
+  const [activeCategory, setActiveCategory] = useState(0)
+  const [activeCoins, setActiveCoins] = useState(0)
+  const [activeLeverages, setActiveLeverages] = useState(0)
+  const [activePositions, setActivePositions] = useState(0)
+
+  const handleCatChange = (e: any) => {
+    //Select categories
+    if ((selectedCategories.some(item => e === item))) {
+      setSelectedCategories(selectedCategories.filter(item => item !== e));
+    }
+    else {
+      setSelectedCategories([...selectedCategories, e])
+    }
+
+    //Show next options
+    if (showCoins === false) {
+      setShowCoins(true)
+    } else {
+      setShowCoins(false)
+    }
+  }
+
+  const handleCoinsChange = (e: any) => {
+    //Select Coins
+    if ((selectedCoins.some(item => e === item))) {
+      setSelectedCoins(selectedCoins.filter(item => item !== e));
+    }
+    else {
+      setSelectedCoins([...selectedCoins, e])
+    }
+
+    //Show next options
+    if (showLeverages === false) {
+      setShowLeverages(true)
+    } else {
+      setShowLeverages(false)
+    }
+
+  }
+
+  const handleLeveragesChange = (e: any) => {
+    //Select Leverages
+    if ((selectedLeverages.some(item => e === item))) {
+      setSelectedLeverages(selectedLeverages.filter(item => item !== e));
+    }
+    else {
+      setSelectedLeverages([...selectedLeverages, e])
+    }
+
+    //Show next options
+    if (showPositions === false) {
+      setShowPositions(true)
+    } else {
+      setShowPositions(false)
+    }
+
+  }
+
+  const handlePositionsChange = (e: any) => {
+    //Select Positions
+    if ((selectedPositions.some(item => e === item))) {
+      setSelectedPositions(selectedPositions.filter(item => item !== e));
+    }
+    else {
+      setSelectedPositions([...selectedPositions, e])
+    }
+
+    //Show next options
+    if (showBet === false) {
+      setShowBet(true)
+    } else {
+      setShowBet(false)
+    }
+
+  }
+
+  const handlePlaceBet = () => {
+    setShowCoins(false)
+    setShowLeverages(false)
+    setShowPositions(false)
+    setShowBet(false)
+    setActiveCategory((activeCategory < category.length) ? activeCategory + 1 : 0)
+  }
+
+  const handleSubmit = () => {
+    if (selectedCategories.length === category.length) {
+      console.log("Submit")
+    }
+  }
 
   return (
     <main className="">
@@ -159,7 +259,7 @@ export default function Home() {
             items={breadcrumb}
           />
 
-          <div className='xl:flex'>
+          <div className='xl:flex justify-between'>
 
             <div className=''>
 
@@ -170,61 +270,73 @@ export default function Home() {
                     key={index}
                     label={item.title}
                     className="mr-2 xl:mr-4 lg:mb-4"
-                    onChange={() => console.log('changed')}
-                    active={item.active}
-                    checked={item.selected}
+                    onChange={() => handleCatChange(item.title)}
+                    active={activeCategory === index ? true : false}
+                    checked={selectedCategories.some(e => item.title === e ? true : false)}
                   />
                 ))}
               </div>
 
-              <Title title={content.general.select_coin} classList='mb-4' />
-              <div className='flex flex-wrap items-center mb-[20px] lg:mb-[57px]'>
-                {coins.map((item, index) => (
-                  <InputCheckbox
-                    key={index}
-                    label={item.title}
-                    className="mr-2 xl:mr-4 lg:mb-4"
-                    onChange={() => console.log('changed')}
-                    active={item.active}
-                    checked={item.selected}
-                  />
-                ))}
-              </div>
-
-              <Title title={content.general.select_leverage} classList='mb-4' />
-              <div className='flex flex-wrap items-center mb-[20px] lg:mb-[57px]'>
-                {leverage.map((item, index) => (
-                  <InputCheckbox
-                    key={index}
-                    label={item.title}
-                    className="mr-2 xl:mr-4 lg:mb-4"
-                    onChange={() => console.log('changed')}
-                    active={item.active}
-                    checked={item.selected}
-                  />
-                ))}
-              </div>
-
-              <Title title={content.general.your_position} classList='mb-4' />
-              <div className='flex flex-wrap items-center mb-[20px] lg:mb-[57px]'>
-                {position.map((item, index) => (
-                  <InputCheckbox
-                    key={index}
-                    label={item.title}
-                    className="mr-2 xl:mr-4 lg:mb-4"
-                    onChange={() => console.log('changed')}
-                    active={item.active}
-                    checked={item.selected}
-                  />
-                ))}
-              </div>
-
-              <Title title={content.general.bet} classList='mb-4' />
-              <div className='grid grid-cols-2 gap-[42px] pb-[45px] mb-[49px] w-full border-b-[3px] border-green-100'>
-                <ButtonBet image="/images/ic-ethereum-2.svg" className='grow'>4,668 DOL</ButtonBet>
-                <ButtonPlaceBet className='grow'>Place bet</ButtonPlaceBet>
-              </div>
-
+              {showCoins && (
+                <>
+                  <Title title={content.general.select_coin} classList='mb-4' />
+                  <div className='flex flex-wrap items-center mb-[20px] lg:mb-[57px]'>
+                    {coins.map((item, index) => (
+                      <InputCheckbox
+                        key={index}
+                        label={item.title}
+                        className="mr-2 xl:mr-4 lg:mb-4"
+                        onChange={() => handleCoinsChange(item.title)}
+                        active={false}
+                        checked={selectedCoins.some(e => item.title === e ? true : false)}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
+              {showLeverages && (
+                <>
+                  <Title title={content.general.select_leverage} classList='mb-4' />
+                  <div className='flex flex-wrap items-center mb-[20px] lg:mb-[57px]'>
+                    {leverage.map((item, index) => (
+                      <InputCheckbox
+                        key={index}
+                        label={item.title}
+                        className="mr-2 xl:mr-4 lg:mb-4"
+                        onChange={() => handleLeveragesChange(item.title)}
+                        active={false}
+                        checked={selectedLeverages.some(e => item.title === e ? true : false)}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
+              {showPositions && (
+                <>
+                  <Title title={content.general.your_position} classList='mb-4' />
+                  <div className='flex flex-wrap items-center mb-[20px] lg:mb-[57px]'>
+                    {position.map((item, index) => (
+                      <InputCheckbox
+                        key={index}
+                        label={item.title}
+                        className="mr-2 xl:mr-4 lg:mb-4"
+                        onChange={() => handlePositionsChange(item.title)}
+                        active={false}
+                        checked={selectedPositions.some(e => item.title === e ? true : false)}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
+              {showBet && (
+                <>
+                  <Title title={content.general.bet} classList='mb-4' />
+                  <div className='grid grid-cols-2 gap-[42px] pb-[45px] w-full border-b-[3px] border-green-100'>
+                    <ButtonBet image="/images/ic-ethereum-2.svg" className='grow'>4,668 DOL</ButtonBet>
+                    <ButtonPlaceBet onClick={handlePlaceBet} className='grow'>Place bet</ButtonPlaceBet>
+                  </div>
+                </>
+              )}
             </div>
 
             <div className='3xl:pl-[60px] max-w-[510px] 3xl:pt-[70px]'>
@@ -245,14 +357,16 @@ export default function Home() {
 
           </div>
 
-          <div className='xl:flex items-center'>
+          <div className='xl:flex items-center mt-4 lg:mt-[49px] justify-between'>
             <div className='xl:w-6/12 xl:flex xl:justify-center'>
-              <ButtonSubmit className='w-full max-w-[344px] mt-6 xl:mt-0'>SUBMIT</ButtonSubmit>
+              <ButtonSubmit disabled={category.length === selectedCategories.length ? false : true} onClick={handleSubmit} className='w-full max-w-[344px] mt-6 xl:mt-0'>SUBMIT</ButtonSubmit>
             </div>
-            <div className='xl:flex items-center xl:w-6/12 mt-6 xl:mt-0'>
+            <div className='xl:flex items-center xl:w-6/12 mt-6 xl:mt-0 justify-between'>
               <div className='font-700 text-[20px] leading-[25px] xl:pl-[40px] mr-6 xl:mr-[39px] mb-4 xl:mb-0'>Improve your chance to win</div>
-              <ButtonDefault className='mr-5'>Share on social</ButtonDefault>
-              <ButtonDefault>Boost</ButtonDefault>
+              <div>
+                <ButtonDefault className='mr-5'>Share on social</ButtonDefault>
+                <ButtonDefault>Boost</ButtonDefault>
+              </div>
             </div>
           </div>
 
