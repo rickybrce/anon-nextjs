@@ -80,7 +80,9 @@ input.sr-only:checked ~ .bg-checkbox-but-gradient .bg-checkbox-but {
 input.sr-only:checked ~ .bg-checkbox-but-gradient .checked-image {
   @apply block
 }
-
+.gradient-page {
+  background: linear-gradient(90deg, #2193B0 0%, #6DD5ED 100%);
+}
 
 
  /* Scrollbar custom */

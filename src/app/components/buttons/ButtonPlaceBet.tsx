@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react'
-import Image from 'next/image'
 
 type Props = {
     disabled?: boolean
@@ -23,6 +22,7 @@ const ButtonPlaceBet = ({ disabled = false, onClick, children, className }: Prop
         leading-[24px]
         font-400
         text-center
+        inline-block
         rounded-[16px] mb-4 lg:mb-0
          text-white transition duration-300 button-gradient-two border-none hover:opacity-80 whitespace-nowrap focus:outline-none relative`}
     ><div className='rounded-[16px] absolute top-[2px] left-[2px] w-[calc(100%-4px)] h-[calc(100%-4px)] button-bg'></div>

@@ -26,7 +26,12 @@
         "select_coin" : "Select Coin",
         "select_leverage" : "Select Leverage",
         "your_position" : "Your Position",
-        "bet" : "Bet"
+        "bet" : "Bet",
+        "burn" : "Burn",
+        "your_current_balance" : "Your Current Balance",
+        "burn_kin" : "Burn KIN",
+        "you_will_get":"You will get",
+        "new_balance" : "New Balance"
 
     },
     "cookies": {
