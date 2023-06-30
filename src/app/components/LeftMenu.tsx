@@ -10,7 +10,7 @@ const leftMenu = [
         iconUrl: "ic-home.svg",
     },
     {
-        link: "#games",
+        link: "/games",
         title: "Games",
         iconUrl: "ic-message.svg",
     },
