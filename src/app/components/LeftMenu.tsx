@@ -3,11 +3,39 @@ import React, { ReactNode } from 'react'
 import LeftMenuSIngleItem from './LeftMenuSIngleItem'
 import Image from "next/image";
 
+const leftMenu = [
+    {
+        link: "/",
+        title: "Dashboard",
+        iconUrl: "ic-home.svg",
+    },
+    {
+        link: "#games",
+        title: "Games",
+        iconUrl: "ic-message.svg",
+    },
+    {
+        link: "/burn",
+        title: "Burn",
+        iconUrl: "ic-buy.svg",
+    },
+    {
+        link: "#scoreboard",
+        title: "Scoreboard",
+        iconUrl: "ic-activity.svg",
+    },
+    {
+        link: "#how2play",
+        title: "How 2 Play",
+        iconUrl: "ic-wallet.svg",
+    }
+]
+
 type Props = {
-    items?: any
+    activeItem?: any
 }
 
-const LeftMenu = ({ items }: Props) => {
+const LeftMenu = ({ activeItem }: Props) => {
     const [active, setActive] = React.useState(false)
     const handlelogout = () => {
         console.log("logout")
@@ -18,7 +46,7 @@ const LeftMenu = ({ items }: Props) => {
 
     return (
         <div>
-            <button onClick={() => handlemenu ? handlemenu() : ""} className={`absolute top-4 xl:hidden z-50 transition-all duration-500 left-4 ${active ? "" : ""}`}>
+            {<button onClick={() => handlemenu ? handlemenu() : ""} className={`absolute top-4 xl:hidden z-50 transition-all duration-500 left-4 ${active ? "" : ""}`}>
                 {active ? (
                     <svg
                         className="h-8 w-8 text-white"
@@ -37,7 +65,7 @@ const LeftMenu = ({ items }: Props) => {
                         <path fill='#fff' d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z" />
                     </svg>
                 )}
-            </button>
+            </button>}
             <div className={`z-40 fixed ${active ? "left-0" : "left-[-100%]"} transition-all duration-500 top-0 xl:relative xl:left-auto xl:top-auto xl:flex shrink-0 flex-wrap items-stretch bg-blue-600 xl:bg-sidebar min-h-full xl:min-h-[calc(100vh-32px)] border-[3px] border-green-100 w-full xl:w-[94px] rounded-[16px] mr-[17px]`}>
                 <div className='w-full'>
                     <div className='mb-[11px] mt-[13px]'>
@@ -55,10 +83,10 @@ const LeftMenu = ({ items }: Props) => {
                             "
                         />
                     </div>
-                    {items && (
-                        items.map((item: any, index: number) => (
-                            <div key={index}>
-                                {items.length === index + 1 ? (
+                    {leftMenu && (
+                        leftMenu.map((item: any, index: number) => (
+                            <div key={index} className='relative'>
+                                {leftMenu.length === index + 1 ? (
                                     <>
                                         <div className='w-full px-[19px] mb-[22px]'> <div className="bg-blue-300 h-[2px] w-full"></div></div>
                                         <LeftMenuSIngleItem
@@ -66,7 +94,7 @@ const LeftMenu = ({ items }: Props) => {
                                             link={item.link}
                                             title={item.title}
                                             iconUrl={item.iconUrl}
-                                            active={item.active}
+                                            active={activeItem === index ? true : false}
                                         />
                                     </>
                                 ) : (
@@ -76,7 +104,7 @@ const LeftMenu = ({ items }: Props) => {
                                             link={item.link}
                                             title={item.title}
                                             iconUrl={item.iconUrl}
-                                            active={item.active}
+                                            active={activeItem === index ? true : false}
                                         />
                                     </>
                                 )}
