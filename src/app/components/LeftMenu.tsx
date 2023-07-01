@@ -20,7 +20,7 @@ const leftMenu = [
         iconUrl: "ic-buy.svg",
     },
     {
-        link: "#scoreboard",
+        link: "/leaderboard",
         title: "Scoreboard",
         iconUrl: "ic-activity.svg",
     },
