@@ -24,10 +24,10 @@ type Props = {
 };
 
 const GamesTabMenu = ({ title }: Props) => {
-    const [activeItem, seActiveItem] = useState(0);
+  const [activeItem, seActiveItem] = useState(0);
   const handleActiveItem = (e: any) => {
     seActiveItem(e);
-    };
+  };
 
   return (
     <div className="text-center">
@@ -38,12 +38,12 @@ const GamesTabMenu = ({ title }: Props) => {
         <div className="text-center">
           {gamesMenu &&
             gamesMenu.map((item: any, index: number) => (
-                  <GamesTabSingleItem
-                    title={item.title}
-                    onClick={() => handleActiveItem(index)}
-                    first={index === 0 ? true : false}
-                    active={activeItem === index}
-                  />
+              <GamesTabSingleItem
+                title={item.title}
+                onClick={() => handleActiveItem(index)}
+                first={index === 0 ? true : false}
+                active={activeItem === index}
+              />
             ))}
         </div>
       </div>

@@ -11,13 +11,7 @@ type Props = {
   first?: boolean;
 };
 
-const GamesTabSingleItem = ({
-  title,
-  active,
-  onClick,
-  first
-}: Props) => {
-
+const GamesTabSingleItem = ({ title, active, onClick, first }: Props) => {
   return (
     <button
       onClick={() => {
@@ -28,7 +22,7 @@ const GamesTabSingleItem = ({
       ${!first ? "border-l-[2px] border-blue-500" : ""}
         `}
     >
-        {title}
+      {title}
     </button>
   );
 };
