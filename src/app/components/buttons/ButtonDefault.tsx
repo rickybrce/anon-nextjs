@@ -20,7 +20,7 @@ const ButtonDefault = ({ disabled = false, onClick, children, className }: Props
         text-[12px]
         2xl:text-[14px]
         leading-[20px]
-        font-700
+        font-w-700
         text-center
         rounded-[16px] mb-4 lg:mb-0
          text-white transition duration-300 bg-checkbox-but-gradient border-none hover:opacity-80 whitespace-nowrap focus:outline-none relative`}

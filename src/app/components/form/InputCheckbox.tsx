@@ -40,7 +40,7 @@ export default function InputCheckbox({ disabled = false,  active, label, checke
         text-[12px]
         2xl:text-[16px]
         leading-[24px]
-        font-400
+        font-w-400
         inline-flex
         items-center
         rounded-[16px] mb-4 lg:mb-0

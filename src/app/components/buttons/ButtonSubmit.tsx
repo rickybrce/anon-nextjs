@@ -22,7 +22,7 @@ const ButtonSubmit = ({ disabled = false, onClick, children, className }: Props)
         text-[12px]
         2xl:text-[16px]
         leading-[24px]
-        font-400
+        font-w-400
         text-center
         rounded-[16px] mb-4 lg:mb-0
          text-white transition duration-300 border-none hover:opacity-80 whitespace-nowrap focus:outline-none relative`}

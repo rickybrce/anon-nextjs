@@ -22,7 +22,7 @@ const ButtonBet = ({ disabled = false, onClick, children, image, className }: Pr
         text-[12px]
         2xl:text-[20px]
         leading-[28px]
-        font-700
+        font-w-700
         rounded-[16px] mb-4 lg:mb-0
         inline-flex items-center
          text-white transition duration-300 button-gradient border-none hover:opacity-80 whitespace-nowrap focus:outline-none relative`}

@@ -20,7 +20,7 @@ const ButtonPlaceBet = ({ disabled = false, onClick, children, className }: Prop
         text-[12px]
         2xl:text-[16px]
         leading-[24px]
-        font-400
+        font-w-400
         text-center
         inline-block
         rounded-[16px] mb-4 lg:mb-0

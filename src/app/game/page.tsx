@@ -13,42 +13,10 @@ import ButtonSubmit from "../components/buttons/ButtonSubmit";
 import ButtonDefault from "../components/buttons/ButtonDefault";
 import { useState } from "react";
 
-const leftMenu = [
-  {
-    link: "/",
-    title: "Dashboard",
-    iconUrl: "ic-home.svg",
-    active: true,
-  },
-  {
-    link: "#games",
-    title: "Games",
-    iconUrl: "ic-message.svg",
-    active: false,
-  },
-  {
-    link: "#burn",
-    title: "Burn",
-    iconUrl: "ic-buy.svg",
-    active: false,
-  },
-  {
-    link: "#scoreboard",
-    title: "Scoreboard",
-    iconUrl: "ic-activity.svg",
-    active: false,
-  },
-  {
-    link: "#how2play",
-    title: "How 2 Play",
-    iconUrl: "ic-wallet.svg",
-    active: false,
-  },
-];
 
 const breadcrumb = [
   {
-    link: "/",
+    link: "/games",
     title: "All Games",
     active: false,
   },
@@ -351,7 +319,7 @@ export default function Home() {
 
             <div className="3xl:pl-[60px] max-w-[510px] 3xl:pt-[70px]">
               <div>
-                <div className="mb-[14px] font-700 text-[20px] leading-[28px] text-white">
+                <div className="mb-[14px] font-w-700 text-[20px] leading-[28px] text-white">
                   Selected Coin chart
                 </div>
                 <div className="p-6 border border-green-100 rounded-[16px]">
@@ -380,7 +348,7 @@ export default function Home() {
               </ButtonSubmit>
             </div>
             <div className="xl:flex items-center xl:w-6/12 mt-6 xl:mt-0 justify-between">
-              <div className="font-700 text-[20px] leading-[25px] xl:pl-[40px] mr-6 xl:mr-[39px] mb-4 xl:mb-0">
+              <div className="font-w-700 text-[20px] leading-[25px] xl:pl-[40px] mr-6 xl:mr-[39px] mb-4 xl:mb-0">
                 Improve your chance to win
               </div>
               <div>

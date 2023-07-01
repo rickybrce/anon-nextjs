@@ -21,12 +21,14 @@ const gamesMenu = [
 
 type Props = {
   title?: any;
+  active : Function
 };
 
-const GamesTabMenu = ({ title }: Props) => {
+const GamesTabMenu = ({ title, active }: Props) => {
   const [activeItem, seActiveItem] = useState(0);
   const handleActiveItem = (e: any) => {
     seActiveItem(e);
+    active(e);
   };
 
   return (

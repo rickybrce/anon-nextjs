@@ -17,7 +17,7 @@ const GamesTabSingleItem = ({ title, active, onClick, first }: Props) => {
       onClick={() => {
         onClick ? onClick() : null;
       }}
-      className={`inline-block text-center relative px-[23px] text-base font-400
+      className={`inline-block text-center relative px-[23px] text-base font-w-400
       ${active ? "text-green-800" : "text-white"}
       ${!first ? "border-l-[2px] border-blue-500" : ""}
         `}
