@@ -35,6 +35,7 @@ module.exports = {
           500:"#5C6FC8",
           600:"#6EE7B7",
           700:"#02AAB0",
+          800:"#00CDAC",
         },
         'purple': {
           100:"#FF3EEC",

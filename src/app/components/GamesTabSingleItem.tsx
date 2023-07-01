@@ -8,30 +8,27 @@ type Props = {
   title?: string;
   active?: boolean;
   onClick?: any;
+  first?: boolean;
 };
 
 const GamesTabSingleItem = ({
   title,
   active,
-  onClick
+  onClick,
+  first
 }: Props) => {
-  const [activeItem, seActiveItem] = useState(false);
-
-  const handleActiveItem = () => {
-    seActiveItem(!activeItem);
-    };
 
   return (
     <button
-      onMouseLeave={() => {
-        handleActiveItem();
+      onClick={() => {
+        onClick ? onClick() : null;
       }}
-      className={`block text-green-200  text-center rounded-[6px] mb-[30px] py-[6px] relative
+      className={`inline-block text-center relative px-[23px] text-base font-400
+      ${active ? "text-green-800" : "text-white"}
+      ${!first ? "border-l-[2px] border-blue-500" : ""}
         `}
     >
-      <span className="text-[13px] leading-[20px] font-w-700 text-center block relative">
         {title}
-      </span>
     </button>
   );
 };
