@@ -87,7 +87,7 @@ input.sr-only:checked ~ .bg-checkbox-but-gradient .checked-image {
   background: linear-gradient(90deg, #3461FF  0%, #8454EB 90%);
 }
 .game-list-bg {
-  background: rgba(22, 26, 66, 0.70);
+  background: rgba(22, 26, 66, 100);
 }
 
 
