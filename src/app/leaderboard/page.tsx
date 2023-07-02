@@ -11,6 +11,9 @@ import GamePopup from "../components/GamePopup";
 import Title from "../components/Title";
 import Image from "next/image";
 import TopNavigationSecond from "../components/TopNavigationSecond";
+import Pagination from "../components/Pagination";
+
+const pages = [1,2,3,4,5,6,7,8,9,10]
 
 const gamesMenu = [
   {
@@ -95,6 +98,7 @@ const games = [
     game: "Game 1",
     nft_name: "Name",
     image: "/images/avatar.png",
+    player: "wallet adress",
     history: [
       {
         id: 1,
@@ -120,6 +124,7 @@ const games = [
     game: "Game 1",
     nft_name: "Name",
     image: "/images/avatar.png",
+    player: "wallet adress",
     history: [
       {
         id: 1,
@@ -145,6 +150,7 @@ const games = [
     game: "Game 2",
     nft_name: "Name",
     image: "/images/avatar.png",
+    player: "wallet adress",
     history: [
       {
         id: 1,
@@ -170,6 +176,7 @@ const games = [
     game: "Game 3",
     nft_name: "Name",
     image: "/images/avatar.png",
+    player: "wallet adress",
     history: [
       {
         id: 1,
@@ -195,6 +202,7 @@ const games = [
     game: "Game 4",
     nft_name: "Name",
     image: "/images/avatar.png",
+    player: "wallet adress",
     history: [
       {
         id: 1,
@@ -249,6 +257,11 @@ export default function Leaderboard() {
     } else {
       setDisplayPopupAll(-1);
     }
+  };
+
+  //TO DO:
+  const handlePagination = () => {
+    console.log("pagination");
   };
 
   return (
@@ -360,6 +373,23 @@ export default function Leaderboard() {
               <Title title="Leaderboard - all positions" />
               <GamesTabMenu active={handleActive} activeName={handleActiveName}  items={gamesMenu} />
             </div>
+            <div className="hidden lg:flex items-center justify-between pt-3 lg:pt-0 pr-4 lg:pr-0 -mb-[20px] mt-6">
+                <div className="text-[12px] lg:pl-[19px] lg:w-[20%] text-left leading-[26px]">
+                  Position
+                </div>
+                <div className="text-[12px] lg:w-[30%] text-left leading-[25px]">
+                Player
+                </div>
+                <div className="text-[12px] lg:w-[30%] text-left leading-[25px]">
+                NFT name
+                </div>
+                <div className="text-[12px] lg:w-[10%] text-left  leading-[28px]">
+                Reveal bets
+                </div>
+                <div className="text-[12px] lg:w-[10%] text-left leading-[25px] whitespace-nowrap lg:whitespace-wrap">
+                  Share
+                </div>
+              </div>
             {gamesMap.map((game, index) => (
               <div key={index} className="mt-[27px] flex lg:block relative">
                 <div className="px-4 lg:px-0 w-full lg:flex items-center justify-between border-blue-800 border-[2px] lg:mt-3 game-list-bg relative transition-all duration-500 border-green-100 mx-auto rounded-[16px] py-[7px] relative">
@@ -367,7 +397,11 @@ export default function Leaderboard() {
                     className="text-[20px] font-w-700 leading-[28px] text-green-200 lg:pl-[20px] lg:w-[20%] text-left mb-2 lg:mb-0"
                     title={game.position + "#"}
                   />
-                  <div className="text-[20px] font-w-700 leading-[28px] lg:w-[20%] text-left flex items-center justify-start mb-2 lg:mb-0">
+                  <SingleGameList
+                    className="text-[20px] font-w-700 leading-[28px] lg:w-[30%] text-left leading-[25px] mb-2 lg:mb-0"
+                    title={game.player}
+                  />
+                  <div className="text-[20px] font-w-700 leading-[28px] lg:w-[30%] text-left flex items-center justify-start mb-2 lg:mb-0">
                     <Image
                       src={game.image}
                       alt={""}
@@ -381,10 +415,6 @@ export default function Leaderboard() {
                     />
                     <span className="ml-[9px]">{game.nft_name}</span>
                   </div>
-                  <SingleGameList
-                    className="uppercase text-[20px] font-w-700 leading-[28px] lg:w-[40%] text-left leading-[25px] mb-2 lg:mb-0"
-                    title={game.game}
-                  />
                   <div className="lg:w-[10%]">
                     <button
                       onClick={() =>
@@ -437,6 +467,7 @@ export default function Leaderboard() {
               </div>
             ))}
           </div>
+          <Pagination pages={pages} onClick={() => handlePagination ? handlePagination() : ""} />
         </div>
       </div>
     </main>
