@@ -10,6 +10,7 @@ import ButtonMenu from "../components/buttons/ButtonMenu";
 import GamePopup from "../components/GamePopup";
 import Title from "../components/Title";
 import Image from "next/image";
+import TopNavigationSecond from "../components/TopNavigationSecond";
 
 const gamesMenu = [
   {
@@ -90,193 +91,149 @@ const mypositions = [
 const games = [
   {
     id: 1,
-    name: "Game 1",
-    startate: "5.3.2022 at 2pm (CET)",
-    enddate: "5.3.2022 at 2pm (CET)",
-    minimum_dlr: "10,000",
-    status: "Soft bets",
-    active: true,
-    history: [],
+    position: "23",
+    game: "Game 1",
+    nft_name: "Name",
+    image: "/images/avatar.png",
+    history: [
+      {
+        id: 1,
+        category: "Category 1",
+        coin: "BTC",
+        leverage: "x10",
+        position: "Long",
+        bet: "10,000",
+      },
+      {
+        id: 2,
+        category: "Category 2",
+        coin: "BTC",
+        leverage: "x10",
+        position: "Long",
+        bet: "10,000",
+      },
+    ],
   },
   {
     id: 2,
-    name: "Game 2",
-    startate: "5.3.2022 at 2pm (CET)",
-    enddate: "5.3.2022 at 2pm (CET)",
-    minimum_dlr: "10,000",
-    status: "Soft bets",
-    active: true,
-    history: [],
+    position: "24",
+    game: "Game 1",
+    nft_name: "Name",
+    image: "/images/avatar.png",
+    history: [
+      {
+        id: 1,
+        category: "Category 1",
+        coin: "BTC",
+        leverage: "x10",
+        position: "Long",
+        bet: "10,000",
+      },
+      {
+        id: 2,
+        category: "Category 2",
+        coin: "BTC",
+        leverage: "x10",
+        position: "Long",
+        bet: "10,000",
+      },
+    ],
   },
   {
-    id: 3,
-    name: "Game 3",
-    startate: "5.3.2022 at 2pm (CET)",
-    enddate: "5.3.2022 at 2pm (CET)",
-    minimum_dlr: "10,000",
-    status: "Soft bets",
-    active: false,
-    history: [],
+    id: 1,
+    position: "23",
+    game: "Game 2",
+    nft_name: "Name",
+    image: "/images/avatar.png",
+    history: [
+      {
+        id: 1,
+        category: "Category 1",
+        coin: "BTC",
+        leverage: "x10",
+        position: "Long",
+        bet: "10,000",
+      },
+      {
+        id: 2,
+        category: "Category 2",
+        coin: "BTC",
+        leverage: "x10",
+        position: "Long",
+        bet: "10,000",
+      },
+    ],
   },
   {
-    id: 4,
-    name: "Game 4",
-    startate: "5.3.2022 at 2pm (CET)",
-    enddate: "5.3.2022 at 2pm (CET)",
-    minimum_dlr: "10,000",
-    status: "Soft bets",
-    active: false,
-    history: [],
+    id: 1,
+    position: "23",
+    game: "Game 3",
+    nft_name: "Name",
+    image: "/images/avatar.png",
+    history: [
+      {
+        id: 1,
+        category: "Category 1",
+        coin: "BTC",
+        leverage: "x10",
+        position: "Long",
+        bet: "10,000",
+      },
+      {
+        id: 2,
+        category: "Category 2",
+        coin: "BTC",
+        leverage: "x10",
+        position: "Long",
+        bet: "10,000",
+      },
+    ],
   },
   {
-    id: 5,
-    name: "Game 5",
-    startate: "5.3.2022 at 2pm (CET)",
-    enddate: "5.3.2022 at 2pm (CET)",
-    minimum_dlr: "10,000",
-    status: "Soft bets",
-    active: false,
-    history: [],
+    id: 1,
+    position: "23",
+    game: "Game 4",
+    nft_name: "Name",
+    image: "/images/avatar.png",
+    history: [
+      {
+        id: 1,
+        category: "Category 1",
+        coin: "BTC",
+        leverage: "x10",
+        position: "Long",
+        bet: "10,000",
+      },
+      {
+        id: 2,
+        category: "Category 2",
+        coin: "BTC",
+        leverage: "x10",
+        position: "Long",
+        bet: "10,000",
+      },
+    ],
   },
 ];
 
-const mygames = [
-  {
-    id: 1,
-    name: "Game 1",
-    startate: "5.3.2022 at 2pm (CET)",
-    enddate: "5.3.2022 at 2pm (CET)",
-    minimum_dlr: "10,000",
-    status: "Soft bets",
-    active: true,
-    history: [
-      {
-        id: 1,
-        category: "Category 1",
-        coin: "BTC",
-        leverage: "x10",
-        position: "Long",
-        bet: "10,000",
-      },
-      {
-        id: 2,
-        category: "Category 2",
-        coin: "BTC",
-        leverage: "x10",
-        position: "Long",
-        bet: "10,000",
-      },
-      {
-        id: 3,
-        category: "Category 3",
-        coin: "BTC",
-        leverage: "x10",
-        position: "Long",
-        bet: "10,000",
-      },
-    ],
-  },
-  {
-    id: 3,
-    name: "Game 3",
-    startate: "5.3.2022 at 2pm (CET)",
-    enddate: "5.3.2022 at 2pm (CET)",
-    minimum_dlr: "10,000",
-    status: "Soft bets",
-    active: false,
-    history: [
-      {
-        id: 1,
-        category: "Category 1",
-        coin: "BTC",
-        leverage: "x10",
-        position: "Long",
-        bet: "10,000",
-      },
-      {
-        id: 2,
-        category: "Category 2",
-        coin: "BTC",
-        leverage: "x10",
-        position: "Long",
-        bet: "10,000",
-      },
-      {
-        id: 3,
-        category: "Category 3",
-        coin: "BTC",
-        leverage: "x10",
-        position: "Long",
-        bet: "10,000",
-      },
-    ],
-  },
-  {
-    id: 4,
-    name: "Game 4",
-    startate: "5.3.2022 at 2pm (CET)",
-    enddate: "5.3.2022 at 2pm (CET)",
-    minimum_dlr: "10,000",
-    status: "Soft bets",
-    active: false,
-    history: [
-      {
-        id: 1,
-        category: "Category 1",
-        coin: "BTC",
-        leverage: "x10",
-        position: "Long",
-        bet: "10,000",
-      },
-      {
-        id: 2,
-        category: "Category 2",
-        coin: "BTC",
-        leverage: "x10",
-        position: "Long",
-        bet: "10,000",
-      },
-      {
-        id: 3,
-        category: "Category 3",
-        coin: "BTC",
-        leverage: "x10",
-        position: "Long",
-        bet: "10,000",
-      },
-    ],
-  },
-];
+
 
 export default function Leaderboard() {
   const [activeItem, setActiveItem] = useState(0);
+  const [activeItemName, setActiveItemName] = useState(games ? games[0].game : "");
   const [displayPopup, setDisplayPopup] = useState(-1);
+  const [displayPopupAll, setDisplayPopupAll] = useState(-1);
 
   const handleActive = (e: any) => {
     setActiveItem(e);
   };
+  const handleActiveName = (e: any) => {
+    setActiveItemName(e);
+  };
 
-  const activeGames = games.filter(
-    (game) => game.active === true && activeItem === 0
-  );
-  const pastGames = games.filter(
-    (game) => game.active !== true && activeItem === 1
-  );
-  const myactiveGames = mygames.filter(
-    (game) => game.active === true && activeItem === 2
-  );
-  const mypastGames = mygames.filter(
-    (game) => game.active !== true && activeItem === 3
-  );
-
-  const gamesMap =
-    activeItem === 0
-      ? activeGames
-      : activeItem === 1
-      ? pastGames
-      : activeItem === 2
-      ? myactiveGames
-      : mypastGames;
+  const gamesMap = games.filter(
+    (game) => game.game ===  activeItemName
+  );;
 
   const handlePopup = (index: any, activeItem: any) => {
     if (displayPopup === -1) {
@@ -286,13 +243,21 @@ export default function Leaderboard() {
     }
   };
 
+  const handlePopupAll = (index: any, activeItem: any) => {
+    if (displayPopupAll === -1) {
+      setDisplayPopupAll(index);
+    } else {
+      setDisplayPopupAll(-1);
+    }
+  };
+
   return (
     <main className="">
       <div className="px-[16px] py-[16px] pt-14 lg:px-[27px] lg:py-[16px] lg:pt-14 xl:pt-[16px] lg:flex">
         <LeftMenu activeItem={3} />
         <LeftAvatarSection />
         <div className="grow overflow-hidden mt-4 lg:mt-0">
-          <TopNavigation />
+          <TopNavigationSecond />
 
           <div className="">
             <div className="mt-[20px] lg:mt-[57px] mb-[16px] lg:mt-[24px]">
@@ -316,26 +281,27 @@ export default function Leaderboard() {
               </div>
               {mypositions.map((game, index) => (
                 <div key={index} className="mt-[27px] flex lg:block relative">
-                  <div className="w-full lg:flex items-center justify-between border-blue-800 border-[2px] lg:mt-3 game-list-bg relative transition-all duration-500 border-green-100 mx-auto rounded-[16px] px-[14px] py-[7px] relative">
+                  <div className="px-4 lg:px-0 w-full lg:flex items-center justify-between border-blue-800 border-[2px] lg:mt-3 game-list-bg relative transition-all duration-500 border-green-100 mx-auto rounded-[16px] py-[7px] relative">
                     <SingleGameList
-                      className="text-[20px] font-w-700 leading-[28px] text-green-200 lg:pl-[10px] lg:w-[20%] text-left"
+                      className="text-[20px] font-w-700 leading-[28px] text-green-200 lg:pl-[20px] lg:w-[20%] text-left mb-2 lg:mb-0"
                       title={game.position + "#"}
                     />
-                    <div
-                      className="text-[20px] font-w-700 leading-[28px] lg:w-[20%] text-left flex items-center justify-start"
-                    ><Image
-                    src={game.image}
-                    alt={""}
-                    width={72}
-                    height={72}
-                    className="
+                    <div className="text-[20px] font-w-700 leading-[28px] lg:w-[20%] text-left flex items-center justify-start mb-2 lg:mb-0">
+                      <Image
+                        src={game.image}
+                        alt={""}
+                        width={72}
+                        height={72}
+                        className="
                     w-[40px]
                     h-[40px]
                     rounded-full
                     "
-                /><span className="ml-[9px]">{game.nft_name}</span></div>
+                      />
+                      <span className="ml-[9px]">{game.nft_name}</span>
+                    </div>
                     <SingleGameList
-                      className="text-sm font-w-600 leading-[12px] text-green-200 lg:w-[40%] text-left leading-[25px]"
+                      className="uppercase text-[20px] font-w-700 leading-[28px] lg:w-[40%] text-left leading-[25px] mb-2 lg:mb-0"
                       title={game.game}
                     />
                     <div className="lg:w-[10%]">
@@ -343,7 +309,7 @@ export default function Leaderboard() {
                         onClick={() =>
                           handlePopup ? handlePopup(index, activeItem) : ""
                         }
-                        className="text-sm font-w-600 leading-[12px]  text-left leading-[26px] inline-flex items-center "
+                        className="text-sm font-w-600 leading-[12px]  text-left leading-[26px] inline-flex items-center mb-2 lg:mb-0"
                       >
                         Show
                         <svg
@@ -368,10 +334,22 @@ export default function Leaderboard() {
                     </div>
                     <div className="lg:w-[10%]">
                       <Link
-                        className="text-[14px] leading-[20px] font-w-700 inline-flex items-center  lg:justify-end leading-[26px]"
-                        href="/leaderboard"
+                        className="text-[14px] leading-[20px] font-w-700 inline-flex items-center  lg:justify-center leading-[26px]"
+                        href="/§twitter"
                       >
-                        twitter
+                        <Image
+                          src="/images/twitter-ison@2x.png"
+                          alt={""}
+                          width={46}
+                          height={46}
+                          className="
+                            w-[23px]
+                            h-[23px]
+                            relative
+                            mx-auto
+                            lg:ml-2
+                            "
+                        />
                       </Link>
                     </div>
                   </div>
@@ -380,84 +358,41 @@ export default function Leaderboard() {
             </div>
             <div className="mt-[20px] lg:mt-[57px] mb-[16px] lg:mt-[24px]">
               <Title title="Leaderboard - all positions" />
-              <GamesTabMenu active={handleActive} items={gamesMenu} />
+              <GamesTabMenu active={handleActive} activeName={handleActiveName}  items={gamesMenu} />
             </div>
             {gamesMap.map((game, index) => (
               <div key={index} className="mt-[27px] flex lg:block relative">
-                <div className="hidden lg:flex items-center justify-between pt-3 lg:pt-0 pr-4 lg:pr-0">
-                  <div className="text-[12px] lg:pl-[19px] lg:w-[7%] text-left leading-[26px]">
-                    Game ID
-                  </div>
-                  <div className="text-[12px] lg:w-[10%] text-left leading-[25px]">
-                    Game name
-                  </div>
-                  <div className="text-[12px] lg:w-[15%] text-left leading-[25px]">
-                    Date start
-                  </div>
-                  <div className="text-[12px] lg:w-[15%] text-left  leading-[28px]">
-                    Date End
-                  </div>
-                  <div className="text-[12px] lg:w-[12%] text-left leading-[25px] whitespace-nowrap lg:whitespace-wrap">
-                    Minimum DLR
-                  </div>
-                  <div className="text-[12px] lg:w-[12%] text-left leading-[25px]">
-                    Status
-                  </div>
-                  {(activeItem === 2 || activeItem === 3) && (
-                    <div className="text-sm font-w-600 leading-[12px] lg:w-[4%] text-left leading-[26px]"></div>
-                  )}
-                  <div className="text-[12px] lg:w-[16%] text-left"></div>
-                  <div className="text-[12px] lg:w-[13%] text-left"></div>
-                </div>
-                <div className="w-full lg:flex items-center justify-between border-blue-800 border-[2px] lg:mt-3 game-list-bg relative transition-all duration-500 border-green-100 mx-auto rounded-[16px] px-[14px] py-[7px] relative">
+                <div className="px-4 lg:px-0 w-full lg:flex items-center justify-between border-blue-800 border-[2px] lg:mt-3 game-list-bg relative transition-all duration-500 border-green-100 mx-auto rounded-[16px] py-[7px] relative">
                   <SingleGameList
-                    className="text-[20px] font-w-700 leading-[28px] text-green-200 lg:pl-[10px] lg:w-[7%] text-left"
-                    title={game.id}
+                    className="text-[20px] font-w-700 leading-[28px] text-green-200 lg:pl-[20px] lg:w-[20%] text-left mb-2 lg:mb-0"
+                    title={game.position + "#"}
                   />
+                  <div className="text-[20px] font-w-700 leading-[28px] lg:w-[20%] text-left flex items-center justify-start mb-2 lg:mb-0">
+                    <Image
+                      src={game.image}
+                      alt={""}
+                      width={72}
+                      height={72}
+                      className="
+                w-[40px]
+                h-[40px]
+                rounded-full
+                "
+                    />
+                    <span className="ml-[9px]">{game.nft_name}</span>
+                  </div>
                   <SingleGameList
-                    className="text-[20px] font-w-700 leading-[28px] lg:w-[10%] text-left"
-                    title={game.name}
+                    className="uppercase text-[20px] font-w-700 leading-[28px] lg:w-[40%] text-left leading-[25px] mb-2 lg:mb-0"
+                    title={game.game}
                   />
-                  <SingleGameList
-                    className="text-sm font-w-600 leading-[12px] text-green-200 lg:w-[15%] text-left leading-[25px]"
-                    title={game.startate}
-                  />
-                  <SingleGameList
-                    className="text-sm font-w-600 leading-[12px] text-green-200 lg:w-[15%] text-left leading-[25px]"
-                    title={game.enddate}
-                  />
-                  <SingleGameList
-                    className="text-[20px] font-w-700 leading-[28px] lg:w-[12%] text-left leading-[26px]"
-                    title={game.minimum_dlr}
-                  />
-                  <SingleGameList
-                    className="text-sm font-w-600 leading-[12px] text-green-200 lg:w-[12%] text-left leading-[26px]"
-                    title={game.status}
-                  />
-                  {(activeItem === 2 || activeItem === 3) && (
-                    <div className="">
-                      <button
-                        onClick={() =>
-                          handlePopup ? handlePopup(index, activeItem) : ""
-                        }
-                        className="text-sm font-w-600 leading-[12px] lg:w-[4%] text-left leading-[26px]"
-                      >
-                        Show
-                      </button>
-                      {displayPopup === index && (
-                        <GamePopup
-                          items={game.history ? game.history : null}
-                          onClick={() => setDisplayPopup(-1)}
-                        />
-                      )}
-                    </div>
-                  )}
-                  <div className="lg:w-[16%] flex lg:justify-end">
-                    <Link
-                      className="text-[14px] leading-[20px] font-w-700 inline-flex items-center  lg:justify-end leading-[26px]"
-                      href="/leaderboard"
+                  <div className="lg:w-[10%]">
+                    <button
+                      onClick={() =>
+                        handlePopupAll ? handlePopupAll(index, activeItem) : ""
+                      }
+                      className="text-sm font-w-600 leading-[12px]  text-left leading-[26px] inline-flex items-center mb-2 lg:mb-0"
                     >
-                      Leaderboard
+                      Show
                       <svg
                         width="25"
                         height="24"
@@ -470,16 +405,34 @@ export default function Leaderboard() {
                           fill="#F9FAFB"
                         />
                       </svg>
+                    </button>
+                    {displayPopupAll === index && (
+                      <GamePopup
+                        items={game.history ? game.history : null}
+                        onClick={() => setDisplayPopupAll(-1)}
+                      />
+                    )}
+                  </div>
+                  <div className="lg:w-[10%]">
+                    <Link
+                      className="text-[14px] leading-[20px] font-w-700 inline-flex items-center  lg:justify-center leading-[26px]"
+                      href="/§twitter"
+                    >
+                      <Image
+                        src="/images/twitter-ison@2x.png"
+                        alt={""}
+                        width={46}
+                        height={46}
+                        className="
+                        w-[23px]
+                        h-[23px]
+                        relative
+                        mx-auto
+                        lg:ml-2
+                        "
+                      />
                     </Link>
                   </div>
-                  <Link
-                    href={`/game`}
-                    className=" lg:w-[13%] text-right inline-block mt-2 lg:mt-0 "
-                  >
-                    <ButtonMenu small={true} className="uppercase">
-                      Play
-                    </ButtonMenu>
-                  </Link>
                 </div>
               </div>
             ))}

@@ -1,8 +1,6 @@
 "use client"; // This is a client component
 import React, { ReactNode } from "react";
-import Image from "next/image";
 import content from "../../../public/static/locales/en/common.json";
-import Link from "next/link";
 
 type Props = {
   items?: any;
@@ -12,7 +10,7 @@ type Props = {
 const GamePopup = ({ items, onClick }: Props) => {
   return (
     <div
-      className={`px-4 lg:px-0 flex lg:block fixed lg:absolute left-0 top-0 lg:top-[70px] py-[15px] z-50 w-full max-w-[970px]`}
+      className={`px-4 lg:px-0 flex lg:block fixed lg:absolute left-0 top-0 lg:top-[40px] py-[15px] z-50 w-full max-w-[970px]`}
     >
       <div className="game-list-bg border-blue-800 border-[2px] rounded-[16px] w-full relative py-[15px]" >
         <button

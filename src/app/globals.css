@@ -78,7 +78,7 @@ input.sr-only:checked ~ .bg-checkbox-but-gradient .bg-checkbox-but {
   background: #466961;
 }
 input.sr-only:checked ~ .bg-checkbox-but-gradient .checked-image {
-  @apply block
+  @apply block;
 }
 .gradient-page {
   background: linear-gradient(90deg, #2193B0 0%, #6DD5ED 100%);
@@ -88,6 +88,12 @@ input.sr-only:checked ~ .bg-checkbox-but-gradient .checked-image {
 }
 .game-list-bg {
   background: rgba(22, 26, 66, 100);
+}
+.border-menu-bg {
+  background: linear-gradient(179deg, #161A42 0%, #0B0D21 100%);
+}
+.menu-button-bg {
+  background: linear-gradient(179deg, #161A42 0%, #161A42 100%);
 }
 
 
