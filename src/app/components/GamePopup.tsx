@@ -57,7 +57,7 @@ const GamePopup = ({ items, onClick }: Props) => {
         <div>
           {items &&
             items.map((item: any, index: any) => (
-              <div className="lg:flex justify-between">
+              <div className="lg:flex justify-between" key={index}>
                 <div className="py-[10px] px-[25px] text-[14px] leading-[18px] font-w-600 lg:w-[20%]">
                   {item.category}
                 </div>
