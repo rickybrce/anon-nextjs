@@ -163,3 +163,44 @@ export function buyExtraCoins({
     },
   });
 }
+
+export function buyExtraLeverage({
+  leverage,
+  user_game_id
+}) {
+  const api = new Api();
+  return api.request({
+    endpoint: "games/buy_extra_leverage/"+user_game_id +"/"+leverage,
+    type: "POST",
+    auth: true,
+    body: {
+      leverage,
+      user_game_id
+    },
+  });
+}
+
+export function revealBet({
+  user_game_id
+  user_id
+}) {
+  const api = new Api();
+  return api.request({
+    endpoint: "games/buy_extra_leverage/"+user_game_id +"/"+user_id,
+    type: "POST",
+    auth: true,
+    body: {
+      user_id,
+      user_game_id
+    },
+  });
+}
+
+export function getScoreboard(game_id: any): any {
+  const api = new Api();
+  return api.request({
+    endpoint: "games/scoreboard/"+game_id,
+    type: "GET",
+    auth: true
+  });
+}
