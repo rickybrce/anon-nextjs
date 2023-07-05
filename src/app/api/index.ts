@@ -53,12 +53,6 @@ export class Api {
       if (response.status === 401) {
         await Preferences.remove({ key: "token" });
         await Preferences.remove({ key: "user" });
-        await Preferences.remove({ key: "parent" });
-        localStorage.removeItem("openChallenge");
-        localStorage.removeItem("ChallengesCompletedGameOne");
-        localStorage.removeItem("ChallengesCompletedGameTwo");
-        localStorage.removeItem("ChallengesCompletedGameThree");
-        localStorage.removeItem("gameScore");
 
         await Preferences.clear();
         //window.location.replace("/");
