@@ -1,13 +1,14 @@
 "use client"; // This is a client component
 import Web3 from "web3";
 // Import the functions you need from the SDKs you need
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ConnectWalletButton from "../components/ConnectWalletButton";
 import mobileCheck from "../helpers/mobileCheck";
 import getLinker from "../helpers/deepLink";
 import axios from "axios";
 import { ethers } from "ethers";
 import MetaMaskOnboarding from "@metamask/onboarding";
+import { Preferences } from "@capacitor/preferences";
 
 declare global {
   interface Window {
@@ -18,6 +19,7 @@ declare global {
 export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const [address, setAddress] = useState("");
+  const [token, setToken] = useState(false);
 
   //const [provider, setProvider] = useState("");
   const [mess, setMessage] = useState();
@@ -65,7 +67,7 @@ export default function LoginPage() {
           const bodyParams = {
             address: account,
             siweMessage: messageToSign,
-            signature: signature
+            signature: signature,
           };
 
           //Set Token
@@ -80,47 +82,33 @@ export default function LoginPage() {
 
           console.log(responseToken);*/
 
-          console.log(JSON.stringify(bodyParams) )
+          console.log(JSON.stringify(bodyParams));
 
-          const formData = new FormData()
-          formData.append('address', bodyParams.address)
-          formData.append('siweMessage', bodyParams.siweMessage)
-          formData.append('signature', bodyParams.signature)
-
-
-
+          //Dummy login
           const headers = new Headers();
           headers.append("Content-type", "application/json");
-          //headers.append("Accept", "application/json");
+          headers.append("Accept", "application/json");
 
-          return fetch(`${baseUrl}/login/access-token/`, {
-            method: "POST",
-            //body: bodyParams ? JSON.stringify(bodyParams) : null,
-            body: formData,
-            mode: "no-cors",
-            headers,
-          }).then(async (response: any) => {
-            console.log(response);
-            if (response.status === 422) {
-              console.log("Wrong login token");
-              //await Preferences.remove({ key: "token" });
-              //await Preferences.clear();
+          return fetch(
+            `${baseUrl}/login/dummy-access-token/${bodyParams.address}`,
+            {
+              method: "POST",
+              //body: bodyParams ? JSON.stringify(bodyParams) : null,
+              body: null,
+              headers,
             }
-
-            if (response.status === 401) {
-            }
-
-            if (!response.status.toString().startsWith("2")) {
-            }
-
-            if (response.status === 204) {
-              return;
-            }
-
-            return response.text().then((text: string) => {
-              return text ? JSON.parse(text) : {};
+          )
+            .then(async (response) => response.json())
+            .then(async (data) => {
+              console.log(data);
+              await Preferences.set({
+                key: "token",
+                value: data.access_token,
+              });
+              if (response.status === 422) {
+                console.log("Wrong login token");
+              }
             });
-          });
 
           //handleLogin(account);
         }
@@ -151,8 +139,14 @@ export default function LoginPage() {
     }
   };
 
+  async function handleLogout() {
+    await Preferences.remove({ key: "token" });
+  }
+
   const onPressLogout = () => {
+    handleLogout();
     setAddress("");
+    setToken(false);
     /*signOut(auth);*/
   };
 
@@ -170,6 +164,17 @@ export default function LoginPage() {
     console.log("sig : " + signature);*/
   };
 
+  useEffect(() => {
+    (async () => {
+      const token = await Preferences.get({ key: "token" });
+      if (token.value !== null) {
+        setToken(true);
+      } else {
+        setToken(false);
+      }
+    })();
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header p-4 flex justify-center">
@@ -177,7 +182,7 @@ export default function LoginPage() {
           onPressConnect={onPressConnect}
           onPressLogout={onPressLogout}
           loading={false}
-          address={address}
+          address={address || token}
         />
       </header>
     </div>

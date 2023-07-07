@@ -10,24 +10,24 @@ export function getGames(skip: any, limit: any): any {
   });
 }
 
-export function createGame({
-  name,
-  open_date,
-  close_date,
-  bets_soft_close,
-  bets_hard_close,
-  enter_amount,
-  remove_bet_amount,
-  bet_late_amount,
-  extra_coins_amount,
-  extra_lev_amount,
-  reveal_bet_amount,
-  category1_name,
-  category2_name,
-  category3_name,
-  category4_name
+export function createGame(
+  name: any,
+  open_date: any,
+  close_date: any,
+  bets_soft_close: any,
+  bets_hard_close: any,
+  enter_amount: any,
+  remove_bet_amount: any,
+  bet_late_amount: any,
+  extra_coins_amount: any,
+  extra_lev_amount: any,
+  reveal_bet_amount : any,    
+  category1_name: any,
+  category2_name: any,
+  category3_name: any,
+  category4_name: any,
   
-}) {
+): any {
   const api = new Api();
   return api.request({
     endpoint: "games",
@@ -63,24 +63,24 @@ export function getGame(id: any): any {
   });
 }
 
-export function updateGame({
-  id,
-  name,
-  open_date,
-  close_date,
-  bets_soft_close,
-  bets_hard_close,
-  enter_amount,
-  remove_bet_amount,
-  bet_late_amount,
-  extra_coins_amount,
-  extra_lev_amount,
-  reveal_bet_amount,
-  category1_name,
-  category2_name,
-  category3_name,
-  category4_name
-}) {
+export function updateGame(
+  id: any,
+  name: any,
+  open_date: any,
+  close_date: any,
+  bets_soft_close: any,
+  bets_hard_close: any,
+  enter_amount: any,
+  remove_bet_amount: any,
+  bet_late_amount: any,
+  extra_coins_amount: any,
+  extra_lev_amount: any,
+  reveal_bet_amount: any,
+  category1_name: any,
+  category2_name: any,
+  category3_name: any,
+  category4_name: any,
+): any {
   const api = new Api();
   return api.request({
     endpoint: "games/"+id,
@@ -106,9 +106,9 @@ export function updateGame({
   });
 }
 
-export function deleteGame({
-  id
-}) {
+export function deleteGame(
+  id: any,
+): any {
   const api = new Api();
   return api.request({
     endpoint: "games/"+id,
@@ -120,9 +120,9 @@ export function deleteGame({
   });
 }
 
-export function createCoin({
-  game_id
-}) {
+export function createCoin(
+  game_id: any,
+): any {
   const api = new Api();
   return api.request({
     endpoint: "games/"+game_id+"/coin",
@@ -134,10 +134,10 @@ export function createCoin({
   });
 }
 
-export function enterGame({
-  game_id,
-  character_id
-}) {
+export function enterGame(
+  game_id: any,
+  character_id: any,
+): any {
   const api = new Api();
   return api.request({
     endpoint: "games/enter/"+game_id+"/"+character_id,
@@ -149,10 +149,10 @@ export function enterGame({
   });
 }
 
-export function buyExtraCoins({
-  game_id,
-  user_game_id
-}) {
+export function buyExtraCoins(
+  game_id: any,
+  user_game_id: any,
+): any {
   const api = new Api();
   return api.request({
     endpoint: "games/buy_extra_coins/"+game_id+"?user_game_id="+user_game_id    ,
@@ -164,10 +164,10 @@ export function buyExtraCoins({
   });
 }
 
-export function buyExtraLeverage({
-  leverage,
-  user_game_id
-}) {
+export function buyExtraLeverage(
+  leverage: any,
+  user_game_id: any,
+): any {
   const api = new Api();
   return api.request({
     endpoint: "games/buy_extra_leverage/"+user_game_id +"/"+leverage,
@@ -180,10 +180,10 @@ export function buyExtraLeverage({
   });
 }
 
-export function revealBet({
-  user_game_id
-  user_id
-}) {
+export function revealBet(
+  user_game_id: any,
+  user_id: any,
+): any {
   const api = new Api();
   return api.request({
     endpoint: "games/buy_extra_leverage/"+user_game_id +"/"+user_id,
