@@ -1,7 +1,9 @@
 "use client"; // This is a client component
-import React, { ReactNode } from 'react'
+import React, { ReactNode, useEffect } from 'react'
 import LeftMenuSIngleItem from './LeftMenuSIngleItem'
 import Image from "next/image";
+import { getGames } from '../api/games';
+
 
 const leftMenu = [
     {
@@ -43,6 +45,15 @@ const LeftMenu = ({ activeItem }: Props) => {
     const handlemenu = () => {
         setActive(!active)
     }
+
+    useEffect(() => {
+        //Get games
+        (async () => {
+          const games = await getGames(0, 100);
+          console.log(games)
+        })();
+    
+    }, []);
 
     return (
         <div>

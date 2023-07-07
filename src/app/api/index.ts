@@ -1,7 +1,7 @@
 import { Preferences } from "@capacitor/preferences";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
-//const API_URL = "http://ungames-laravel.localhost:8016/api";
+//const API_URL = process.env.NEXT_PUBLIC_API_URL;
+const API_URL = "https://kinapiv2.tokensmarties.com/api/v1";
 
 export class ApiException {
   name: string;

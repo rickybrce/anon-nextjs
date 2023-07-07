@@ -5,6 +5,10 @@ import TopNavigation from './components/TopNavigation'
 import ActiveGames from './components/ActiveGames'
 import Statistic from './components/Statistic'
 import TopPlayers from './components/TopPlayers'
+import { useEffect } from 'react'
+import { getGames } from './api/games'
+
+
 
 
 export default function Home() {
