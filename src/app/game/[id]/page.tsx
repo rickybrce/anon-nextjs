@@ -1,16 +1,16 @@
 "use client"; // This is a client component
 import Image from "next/image";
-import LeftMenu from "../components/LeftMenu";
-import LeftAvatarSection from "../components/LeftAvatarSection";
-import TopNavigation from "../components/TopNavigation";
-import BreadCrumb from "../components/BreadCrumb";
-import Title from "../components/Title";
-import content from "../../../public/static/locales/en/common.json";
-import InputCheckbox from "../components/form/InputCheckbox";
-import ButtonBet from "../components/buttons/ButtonBet";
-import ButtonPlaceBet from "../components/buttons/ButtonPlaceBet";
-import ButtonSubmit from "../components/buttons/ButtonSubmit";
-import ButtonDefault from "../components/buttons/ButtonDefault";
+import LeftMenu from "../../components/LeftMenu";
+import LeftAvatarSection from "../../components/LeftAvatarSection";
+import TopNavigation from "../../components/TopNavigation";
+import BreadCrumb from "../../components/BreadCrumb";
+import Title from "../../components/Title";
+import content from "../../../../public/static/locales/en/common.json";
+import InputCheckbox from "../../components/form/InputCheckbox";
+import ButtonBet from "../../components/buttons/ButtonBet";
+import ButtonPlaceBet from "../../components/buttons/ButtonPlaceBet";
+import ButtonSubmit from "../../components/buttons/ButtonSubmit";
+import ButtonDefault from "../../components/buttons/ButtonDefault";
 import { useState } from "react";
 
 

@@ -53,6 +53,23 @@ export function createGame(
   });
 }
 
+export function getActiveGames(skip: any, limit: any): any {
+  const api = new Api();
+  return api.request({
+    endpoint: "games/active?skip="+skip+"&limit="+limit,
+    type: "GET",
+    auth: true
+  });
+}
+export function getPastGames(skip: any, limit: any): any {
+  const api = new Api();
+  return api.request({
+    endpoint: "games/past?skip="+skip+"&limit="+limit,
+    type: "GET",
+    auth: true
+  });
+}
+
 
 export function getGame(id: any): any {
   const api = new Api();

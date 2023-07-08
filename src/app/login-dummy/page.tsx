@@ -9,6 +9,7 @@ import axios from "axios";
 import { ethers } from "ethers";
 import MetaMaskOnboarding from "@metamask/onboarding";
 import { Preferences } from "@capacitor/preferences";
+import { useRouter } from "next/navigation";
 
 declare global {
   interface Window {
@@ -17,6 +18,7 @@ declare global {
 }
 
 export default function LoginPage() {
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [address, setAddress] = useState("");
   const [token, setToken] = useState(false);
@@ -106,6 +108,8 @@ export default function LoginPage() {
                 key: "token",
                 value: data.access_token,
               });
+              //Redirect to dashboard
+              router.push("/")
               if (response.status === 422) {
                 console.log("Wrong login token");
               }

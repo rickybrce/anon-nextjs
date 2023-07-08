@@ -3,6 +3,8 @@ import React, { ReactNode, useEffect } from 'react'
 import LeftMenuSIngleItem from './LeftMenuSIngleItem'
 import Image from "next/image";
 import { getGames } from '../api/games';
+import { Preferences } from '@capacitor/preferences';
+import { useRouter } from "next/navigation";
 
 
 const leftMenu = [
@@ -38,9 +40,14 @@ type Props = {
 }
 
 const LeftMenu = ({ activeItem }: Props) => {
+    const router = useRouter()
     const [active, setActive] = React.useState(false)
-    const handlelogout = () => {
+    async function handlelogout() {
         console.log("logout")
+        //Remove token
+        await Preferences.remove({ key: "token" });
+        //Redirect to login
+        router.push('/login-dummy')
     }
     const handlemenu = () => {
         setActive(!active)
@@ -50,10 +57,21 @@ const LeftMenu = ({ activeItem }: Props) => {
         //Get games
         (async () => {
           const games = await getGames(0, 100);
-          console.log(games)
+          //console.log(games)
         })();
     
     }, []);
+
+    //Check if logged in
+    useEffect(() => {
+        (async () => {
+          const token = await Preferences.get({ key: "token" });
+          if (token.value !== null) {
+          } else {
+            router.push('/login-dummy')
+          }
+        })();
+      }, []);
 
     return (
         <div>

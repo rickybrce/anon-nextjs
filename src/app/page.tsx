@@ -1,15 +1,11 @@
-import Image from 'next/image'
+
+//"use client"; // This is a client component
 import LeftMenu from './components/LeftMenu'
 import LeftAvatarSection from './components/LeftAvatarSection'
 import TopNavigation from './components/TopNavigation'
 import ActiveGames from './components/ActiveGames'
 import Statistic from './components/Statistic'
 import TopPlayers from './components/TopPlayers'
-import { useEffect } from 'react'
-import { getGames } from './api/games'
-
-
-
 
 export default function Home() {
   

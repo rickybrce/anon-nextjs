@@ -7,6 +7,7 @@ import mobileCheck from "../helpers/mobileCheck";
 import getLinker from "../helpers/deepLink";
 import axios from "axios";
 import { ethers } from "ethers";
+import { useRouter } from "next/navigation";
 import MetaMaskOnboarding from "@metamask/onboarding";
 
 declare global {
@@ -16,6 +17,7 @@ declare global {
 }
 
 export default function LoginPage() {
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [address, setAddress] = useState("");
 
