@@ -68,6 +68,8 @@ const LeftAvatarSection = ({ }: Props) => {
                 name={avatar.name}
                 nickname={avatar.nickname}
                 image={avatar.image}
+                tooltipText='Some text here'
+                tooltipTextTwo='Some text here two'
             />
             <Avatars
                 items={avatars}
