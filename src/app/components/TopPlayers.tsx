@@ -7,47 +7,47 @@ import Image from "next/image";
 
 const players = [
     {
-        title: "@dicar",
-        value: "$232,102",
+        title: "Wallet address",
+        value: "Game 1",
         image: "/images/player-1.png",
         top: true
     },
     {
-        title: "@astroo2",
-        value: "$172,023",
+        title: "Wallet address",
+        value: "Game 2",
         image: "/images/player-2.png",
         top: true
     },
     {
-        title: "@micle",
-        value: "$92,002",
+        title: "Wallet address",
+        value: "Game 3",
         image: "/images/player-3.png",
     },
     {
-        title: "@11 eror D.",
-        value: "$88,024",
+        title: "Wallet address",
+        value: "Game 4",
         image: "/images/player-4.png",
         top: true
     },
     {
-        title: "@astroo2",
-        value: "$172,023",
+        title: "Wallet address",
+        value: "Game 5",
         image: "/images/player-5.png",
     },
     {
-        title: "@astroo2",
-        value: "$172,023",
+        title: "Wallet address",
+        value: "Game 6",
         image: "/images/player-6.png",
     },
     {
-        title: "@dicar",
-        value: "$232,102",
+        title: "Wallet address",
+        value: "Game 7",
         image: "/images/player-1.png",
         top: true
     },
     {
-        title: "@astroo2",
-        value: "$172,023",
+        title: "Wallet address",
+        value: "Game 8",
         image: "/images/player-2.png",
         top: true
     },

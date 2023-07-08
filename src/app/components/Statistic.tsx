@@ -18,12 +18,12 @@ const games = [
         image: "/images/ic-num.svg"
     },
     {
-        title: "ETH spent",
+        title: "Active users",
         value: "0.5 eth",
         image: "/images/ic-eth.svg"
     },
     {
-        title: "% of KIN locked",
+        title: "% KIN ...",
         value: "21%",
         image: "/images/ic-kin.svg"
     },
@@ -33,7 +33,7 @@ const games = [
         image: "/images/ic-glass.svg"
     },
     {
-        title: "# of boosts purchased",
+        title: "KIN price",
         value: "0.5 eth",
         image: "/images/ic-cart.svg"
     }

@@ -49,6 +49,12 @@ const balance = {
     type: "eth",
     url: "/#"
 }
+const balanceTwo = {
+    title: "Balance",
+    value : "4,668 KIN",
+    type: "eth",
+    url: "/#"
+}
 
 type Props = {
 
@@ -72,6 +78,14 @@ const LeftAvatarSection = ({ }: Props) => {
                 ctaLink={balance.url}
                 type={balance.type}
                 value={balance.value}
+            />
+            <Balance
+                title={""}
+                ctaLabel={content.general.butAddLabel}
+                ctaLink={balanceTwo.url}
+                type={balanceTwo.type}
+                value={balanceTwo.value}
+                size='small'
             />
             <LeftGames />
             <LeftHotGame />
