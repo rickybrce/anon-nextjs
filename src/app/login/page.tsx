@@ -27,7 +27,8 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
-      const yourWebUrl = "localhost:3000"; // Replace with your website domain
+      //const yourWebUrl = "localhost:3000"; // Replace with your website domain
+      const yourWebUrl = process.env.NEXT_PUBLIC_DOMAIN
       const deepLink = `https://metamask.app.link/dapp/${yourWebUrl}`;
       const downloadMetamaskUrl = "https://metamask.io/download.html";
 
