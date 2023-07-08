@@ -22,7 +22,9 @@
         "play_cta" : "Play",
         "statistic" : "Statistic",
         "top_players" : "Top players",
-        "select_category" : "Select Category ",
+        "select_category" : "Select Category",
+        "select_character" : "Select your playing character on the left",
+        "select_character_text" : "Some text here",
         "select_coin" : "Select Coin",
         "select_leverage" : "Select Leverage",
         "your_position" : "Your Position",
@@ -31,7 +33,9 @@
         "your_current_balance" : "Your Current Balance",
         "burn_kin" : "Burn KIN",
         "you_will_get":"You will get",
-        "new_balance" : "New Balance"
+        "new_balance" : "New Balance",
+        "status" : "Status",
+        "burn_tooltip_text" : "By doing this you will spend: <br><strong>xyz DOL</strong>"
 
     },
     "cookies": {

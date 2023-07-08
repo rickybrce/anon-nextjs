@@ -71,8 +71,11 @@ font-feature-settings: "cv10" on, "cv06" on;
 .bg-checkbox-but-gradient:hover {
   background: linear-gradient(180deg, #8454EB 0%, #3461FF 95.31%);
 }
-input.sr-only:checked ~ .bg-checkbox-but-gradient {
+input.sr-only:checked ~ .bg-checkbox-but-gradient, .bg-checkbox-but-gradient-active {
   background: linear-gradient(180deg, #1FA2FF 0%, #A6FFCB 95.31%);
+}
+.bg-checkbox-but-gradient-extra {
+  background: linear-gradient(180deg, #E2E4E9 0%, #A6FFCB 95.31%);
 }
 input.sr-only:checked ~ .bg-checkbox-but-gradient .bg-checkbox-but {
   background: #466961;

@@ -217,13 +217,13 @@ export default function Home() {
           <TopNavigation />
           <div className="xl:flex justify-between">
             <div className="">
-              <div className="relative">
+              <div className="relative inline-block">
                 <Title
                   title={content.general.burn}
                   classList="mb-4 lg:mb-10 mt-4 lg:mt-8"
                 />
-                <div className="absolute right-[-30px] top-[0px]">
-                  <Tooltip text="Some text here" />
+                <div className="absolute right-[-30px] top-[15px] lg:top-[30px]">
+                  <Tooltip text={content.general.burn_tooltip_text} cta_label="Agree"/>
                 </div>
               </div>
             </div>

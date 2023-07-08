@@ -20,16 +20,18 @@ type Props = {
   checked?: boolean
   label?: string
   active?: boolean
+  extra?: boolean
 }
 
-export default function InputCheckbox({ disabled = false,  active, label, checked, onChange, required, onKeyUp, error, className, name, placeholder, type, value, id, ref }: Props) {
+export default function InputCheckbox({ disabled = false, extra, active, label, checked, onChange, required, onKeyUp, error, className, name, placeholder, type, value, id, ref }: Props) {
   const errors = error?.length ?? 0;
   return (
     <div className={`relative ${className}`}>
       <label className="relative inline-flex items-center cursor-pointer">
         <input onChange={(e) => (onChange ? onChange(e) : '')} type="checkbox" value="" className="sr-only peer" checked={checked} />
         <div className={` 
-        ${active ? 'pr-[40px]  lg:pr-[60px]' : 'bg-checkbox-but'}
+        ${active ? 'bg-checkbox-but-gradient-active pr-[40px]' : 'bg-checkbox-but'}
+        ${extra ? 'bg-checkbox-but-gradient-extra pr-[40px]' : ''}
         px-[16px] 
         min-h-[52px]
         peer-checked:pr-[40px] 
@@ -56,12 +58,6 @@ export default function InputCheckbox({ disabled = false,  active, label, checke
           className='hidden absolute right-3 top-5 checked-image' />
           </div>
         )}
-        {active && (
-          <Image src="images/ic-active-checkbox.svg" 
-          alt="checked"
-          width={18} height={18} 
-          className='absolute right-3 top-5 active-image' />
-           )}
         </div>
         
       </label>

@@ -82,22 +82,32 @@ const leverage = [
     title: "5x",
     active: true,
     selected: true,
+    extra: false
   },
   {
     title: "10x",
     active: true,
     selected: false,
+    extra: false
   },
   {
     title: "15x",
     active: false,
     selected: false,
+    extra: false
   },
   {
     title: "20x",
     active: false,
     selected: false,
+    extra: false
   },
+  {
+    title: "Extra leverage",
+    active: false,
+    selected: false,
+    extra: true
+  }
 ];
 
 const position = [
@@ -216,11 +226,12 @@ export default function Home() {
         <LeftAvatarSection />
         <div className="grow overflow-hidden mt-4 lg:mt-0">
           <TopNavigation />
-          <BreadCrumb items={breadcrumb} />
+          <BreadCrumb items={breadcrumb} status="Soft" tootltipText="Some text here" />
 
           <div className="xl:flex justify-between">
             <div className="">
-              <Title title={content.general.select_category} classList="mb-4" />
+            <Title title={"1. "+content.general.select_character} tooltipText={content.general.select_character_text} classList="mb-4" />
+              <Title title={"2. "+content.general.select_category} classList="mb-4" />
               <div className="flex flex-wrap items-center mb-[20px] lg:mb-[57px]">
                 {category.map((item, index) => (
                   <InputCheckbox
@@ -238,7 +249,7 @@ export default function Home() {
 
               {showCoins && (
                 <>
-                  <Title title={content.general.select_coin} classList="mb-4" />
+                  <Title title={"3. "+content.general.select_coin} classList="mb-4" />
                   <div className="flex flex-wrap items-center mb-[20px] lg:mb-[57px]">
                     {coins.map((item, index) => (
                       <InputCheckbox
@@ -258,7 +269,7 @@ export default function Home() {
               {showLeverages && (
                 <>
                   <Title
-                    title={content.general.select_leverage}
+                    title={"4. "+content.general.select_leverage}
                     classList="mb-4"
                   />
                   <div className="flex flex-wrap items-center mb-[20px] lg:mb-[57px]">
@@ -272,6 +283,7 @@ export default function Home() {
                         checked={selectedLeverages.some((e) =>
                           item.title === e ? true : false
                         )}
+                        extra={item.extra}
                       />
                     ))}
                   </div>
@@ -280,7 +292,7 @@ export default function Home() {
               {showPositions && (
                 <>
                   <Title
-                    title={content.general.your_position}
+                    title={"5. "+content.general.your_position}
                     classList="mb-4"
                   />
                   <div className="flex flex-wrap items-center mb-[20px] lg:mb-[57px]">
@@ -301,7 +313,7 @@ export default function Home() {
               )}
               {showBet && (
                 <>
-                  <Title title={content.general.bet} classList="mb-4" />
+                  <Title title={"6. "+content.general.bet} classList="mb-4" />
                   <div className="grid grid-cols-2 gap-[42px] pb-[45px] w-full border-b-[3px] border-green-100">
                     <ButtonBet
                       image="/images/ic-ethereum-2.svg"
