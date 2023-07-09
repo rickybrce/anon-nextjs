@@ -4,7 +4,8 @@ import content from '../../../public/static/locales/en/common.json'
 import Image from "next/image";
 import ButtonMenu from './buttons/ButtonMenu';
 import Link from 'next/link';
-
+import { Preferences } from '@capacitor/preferences';
+import { useRouter } from "next/navigation";
 
 
 
@@ -13,7 +14,15 @@ type Props = {
 }
 
 const TopNavigation = ({ }: Props) => {
-
+    const router = useRouter()
+    async function handlelogout() {
+        console.log("logout")
+        //Remove token
+        await Preferences.remove({ key: "token" });
+        //Redirect to login
+        router.push('/login-dummy')
+    }
+  
     return (
         <div className="w-full bg-sidebar border-[3px] border-green-100 rounded-[16px] p-[20px] md:flex items-center justify-between">
             <div className='flex items-center mb-4 lg:mb-0'>
@@ -49,9 +58,9 @@ const TopNavigation = ({ }: Props) => {
                 </Link>
             </div>
 
-            <Link href="#" className='ml-[10px]'>
-                <ButtonMenu>Connect wallet</ButtonMenu>
-            </Link>
+            
+                <ButtonMenu onClick={()=> handlelogout ? handlelogout() : ""}>Logout</ButtonMenu>
+            
         </div>
     )
 }

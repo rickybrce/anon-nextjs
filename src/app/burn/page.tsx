@@ -12,6 +12,7 @@ import BalanceSecond from "../components/BalanceSecond";
 import ButtonPlaceBet from "../components/buttons/ButtonPlaceBet";
 import BalanceSecondProgress from "../components/BalanceSecondProgress";
 import Tooltip from "../components/Tooltip";
+import { createBet } from "../api/bets";
 
 const breadcrumb = [
   {
@@ -114,83 +115,15 @@ const position = [
 
 export default function Home() {
   const [selectedCategories, setSelectedCategories] = useState<any[]>([]);
-  const [selectedCoins, setSelectedCoins] = useState<any[]>([]);
-  const [selectedLeverages, setSelectedLeverages] = useState<any[]>([]);
-  const [selectedPositions, setSelectedPositions] = useState<any[]>([]);
 
   const [showCoins, setShowCoins] = useState(false);
   const [showLeverages, setShowLeverages] = useState(false);
   const [showPositions, setShowPositions] = useState(false);
   const [showBet, setShowBet] = useState(false);
+  const [errors, setErrors] = useState<any[]>([]);
 
   const [activeCategory, setActiveCategory] = useState(0);
-  const [activeCoins, setActiveCoins] = useState(0);
-  const [activeLeverages, setActiveLeverages] = useState(0);
-  const [activePositions, setActivePositions] = useState(0);
 
-  const handleCatChange = (e: any) => {
-    //Select categories
-    if (selectedCategories.some((item) => e === item)) {
-      setSelectedCategories(selectedCategories.filter((item) => item !== e));
-    } else {
-      setSelectedCategories([...selectedCategories, e]);
-    }
-
-    //Show next options
-    if (showCoins === false) {
-      setShowCoins(true);
-    } else {
-      setShowCoins(false);
-    }
-  };
-
-  const handleCoinsChange = (e: any) => {
-    //Select Coins
-    if (selectedCoins.some((item) => e === item)) {
-      setSelectedCoins(selectedCoins.filter((item) => item !== e));
-    } else {
-      setSelectedCoins([...selectedCoins, e]);
-    }
-
-    //Show next options
-    if (showLeverages === false) {
-      setShowLeverages(true);
-    } else {
-      setShowLeverages(false);
-    }
-  };
-
-  const handleLeveragesChange = (e: any) => {
-    //Select Leverages
-    if (selectedLeverages.some((item) => e === item)) {
-      setSelectedLeverages(selectedLeverages.filter((item) => item !== e));
-    } else {
-      setSelectedLeverages([...selectedLeverages, e]);
-    }
-
-    //Show next options
-    if (showPositions === false) {
-      setShowPositions(true);
-    } else {
-      setShowPositions(false);
-    }
-  };
-
-  const handlePositionsChange = (e: any) => {
-    //Select Positions
-    if (selectedPositions.some((item) => e === item)) {
-      setSelectedPositions(selectedPositions.filter((item) => item !== e));
-    } else {
-      setSelectedPositions([...selectedPositions, e]);
-    }
-
-    //Show next options
-    if (showBet === false) {
-      setShowBet(true);
-    } else {
-      setShowBet(false);
-    }
-  };
 
   const handlePlaceBet = () => {
     setShowCoins(false);
@@ -200,13 +133,40 @@ export default function Home() {
     setActiveCategory(
       activeCategory < category.length ? activeCategory + 1 : 0
     );
+    
+      const user_game_id = ""
+      const coin_id  = ""
+      const is_payed  = ""
+      const submition_date  = ""
+      const category_id = ""
+      const leverage = ""
+      const position_type =""
+      const amount = ""
+      const coin_price = ""
+
+    createBet(
+      user_game_id,
+      coin_id,
+      is_payed,
+      submition_date,
+      category_id,
+      leverage,
+      position_type,
+      amount,
+      coin_price
+  )
+      .then(async (response : any) => {
+
+         console.log(response)
+
+      })
+      .catch((error: any) => {
+          console.log(error.response.message)
+          setErrors(error.response.errors);
+      });
+
   };
 
-  const handleSubmit = () => {
-    if (selectedCategories.length === category.length) {
-      console.log("Submit");
-    }
-  };
 
   return (
     <main className="">
