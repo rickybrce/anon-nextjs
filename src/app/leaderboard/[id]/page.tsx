@@ -1,17 +1,17 @@
 "use client"; // This is a client component
-import LeftMenu from "../components/LeftMenu";
-import LeftAvatarSection from "../components/LeftAvatarSection";
-import TopNavigation from "../components/TopNavigation";
+import LeftMenu from "../../components/LeftMenu";
+import LeftAvatarSection from "../../components/LeftAvatarSection";
+import TopNavigation from "../../components/TopNavigation";
 import { useState } from "react";
-import GamesTabMenu from "../components/GamesTabMenu";
-import SingleGameList from "../components/SingleGameList";
+import GamesTabMenu from "../../components/GamesTabMenu";
+import SingleGameList from "../../components/SingleGameList";
 import Link from "next/link";
-import ButtonMenu from "../components/buttons/ButtonMenu";
-import GamePopup from "../components/GamePopup";
-import Title from "../components/Title";
+import ButtonMenu from "../../components/buttons/ButtonMenu";
+import GamePopup from "../../components/GamePopup";
+import Title from "../../components/Title";
 import Image from "next/image";
-import TopNavigationSecond from "../components/TopNavigationSecond";
-import Pagination from "../components/Pagination";
+import TopNavigationSecond from "../../components/TopNavigationSecond";
+import Pagination from "../../components/Pagination";
 
 const pages = [1,2,3,4,5,6,7,8,9,10]
 

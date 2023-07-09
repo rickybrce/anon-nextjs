@@ -2,12 +2,14 @@
 import LeftMenu from "../components/LeftMenu";
 import LeftAvatarSection from "../components/LeftAvatarSection";
 import TopNavigation from "../components/TopNavigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import GamesTabMenu from "../components/GamesTabMenu";
 import SingleGameList from "../components/SingleGameList";
 import Link from "next/link";
 import ButtonMenu from "../components/buttons/ButtonMenu";
 import GamePopup from "../components/GamePopup";
+import { getActiveGames, getGames, getPastGames } from "../api/games";
+import moment from "moment";
 
 const gamesMenu = [
   {
@@ -28,9 +30,9 @@ const games = [
   {
     id: 1,
     name: "Game 1",
-    startate: "5.3.2022 at 2pm (CET)",
-    enddate: "5.3.2022 at 2pm (CET)",
-    minimum_dlr: "10,000",
+    open_date: "5.3.2022 at 2pm (CET)",
+    close_date: "5.3.2022 at 2pm (CET)",
+    enter_amount: "10,000",
     status: "Soft bets",
     active: true,
     history: [],
@@ -38,9 +40,9 @@ const games = [
   {
     id: 2,
     name: "Game 2",
-    startate: "5.3.2022 at 2pm (CET)",
-    enddate: "5.3.2022 at 2pm (CET)",
-    minimum_dlr: "10,000",
+    open_date: "5.3.2022 at 2pm (CET)",
+    close_date: "5.3.2022 at 2pm (CET)",
+    enter_amount: "10,000",
     status: "Soft bets",
     active: true,
     history: [],
@@ -48,9 +50,9 @@ const games = [
   {
     id: 3,
     name: "Game 3",
-    startate: "5.3.2022 at 2pm (CET)",
-    enddate: "5.3.2022 at 2pm (CET)",
-    minimum_dlr: "10,000",
+    open_date: "5.3.2022 at 2pm (CET)",
+    close_date: "5.3.2022 at 2pm (CET)",
+    enter_amount: "10,000",
     status: "Soft bets",
     active: false,
     history: [],
@@ -58,9 +60,9 @@ const games = [
   {
     id: 4,
     name: "Game 4",
-    startate: "5.3.2022 at 2pm (CET)",
-    enddate: "5.3.2022 at 2pm (CET)",
-    minimum_dlr: "10,000",
+    open_date: "5.3.2022 at 2pm (CET)",
+    close_date: "5.3.2022 at 2pm (CET)",
+    enter_amount: "10,000",
     status: "Soft bets",
     active: false,
     history: [],
@@ -68,9 +70,9 @@ const games = [
   {
     id: 5,
     name: "Game 5",
-    startate: "5.3.2022 at 2pm (CET)",
-    enddate: "5.3.2022 at 2pm (CET)",
-    minimum_dlr: "10,000",
+    open_date: "5.3.2022 at 2pm (CET)",
+    close_date: "5.3.2022 at 2pm (CET)",
+    enter_amount: "10,000",
     status: "Soft bets",
     active: false,
     history: [],
@@ -81,9 +83,9 @@ const mygames = [
   {
     id: 1,
     name: "Game 1",
-    startate: "5.3.2022 at 2pm (CET)",
-    enddate: "5.3.2022 at 2pm (CET)",
-    minimum_dlr: "10,000",
+    open_date: "5.3.2022 at 2pm (CET)",
+    close_date: "5.3.2022 at 2pm (CET)",
+    enter_amount: "10,000",
     status: "Soft bets",
     active: true,
     history: [
@@ -116,9 +118,9 @@ const mygames = [
   {
     id: 3,
     name: "Game 3",
-    startate: "5.3.2022 at 2pm (CET)",
-    enddate: "5.3.2022 at 2pm (CET)",
-    minimum_dlr: "10,000",
+    open_date: "5.3.2022 at 2pm (CET)",
+    close_date: "5.3.2022 at 2pm (CET)",
+    enter_amount: "10,000",
     status: "Soft bets",
     active: false,
     history: [
@@ -151,9 +153,9 @@ const mygames = [
   {
     id: 4,
     name: "Game 4",
-    startate: "5.3.2022 at 2pm (CET)",
-    enddate: "5.3.2022 at 2pm (CET)",
-    minimum_dlr: "10,000",
+    open_date: "5.3.2022 at 2pm (CET)",
+    close_date: "5.3.2022 at 2pm (CET)",
+    enter_amount: "10,000",
     status: "Soft bets",
     active: false,
     history: [
@@ -188,17 +190,19 @@ const mygames = [
 export default function Games() {
   const [activeItem, setActiveItem] = useState(0);
   const [displayPopup, setDisplayPopup] = useState(-1);
+  const [activeGames, setActiveGames] = useState([]);
+  const [pastGames, setPastGames] = useState([]);
 
   const handleActive = (e: any) => {
     setActiveItem(e);
   };
 
-  const activeGames = games.filter(
+  /*const activeGames = games.filter(
     (game) => game.active === true && activeItem === 0
-  );
-  const pastGames = games.filter(
+  );*/
+  /*const pastGames = games.filter(
     (game) => game.active !== true && activeItem === 1
-  );
+  );*/
   const myactiveGames = mygames.filter(
     (game) => game.active === true && activeItem === 2
   );
@@ -223,6 +227,20 @@ export default function Games() {
     }
   };
 
+  useEffect(() => {
+    //Get active games
+    (async () => {
+      const activegames = await getActiveGames(0, 1000);
+      setActiveGames(activegames);
+      console.log(activegames)
+    })();
+    (async () => {
+      const pastgames = await getPastGames(0, 1000);
+      setPastGames(pastgames);
+    })();
+
+}, []);
+
   return (
     <main className="">
       <div className="px-[16px] py-[16px] pt-14 lg:px-[27px] lg:py-[16px] lg:pt-14 xl:pt-[16px] lg:flex">
@@ -236,56 +254,56 @@ export default function Games() {
               <GamesTabMenu active={handleActive} items={gamesMenu} />
             </div>
             <div className="hidden lg:flex items-center justify-between pt-3 lg:pt-0 pr-4 lg:pr-0 -mb-[20px]">
-              <div className="text-[12px] lg:pl-[19px] lg:w-[7%] text-left leading-[26px]">
+              <div className="text-[12px] lg:pl-[19px] lg:w-[10%] text-left leading-[26px]">
                 Game ID
               </div>
-              <div className="text-[12px] lg:w-[10%] text-left leading-[25px]">
+              <div className="text-[12px] lg:w-[20%] text-left leading-[25px]">
                 Game name
               </div>
-              <div className="text-[12px] lg:w-[15%] text-left leading-[25px]">
+              <div className="text-[12px] lg:w-[10%] text-left leading-[25px]">
                 Date start
               </div>
-              <div className="text-[12px] lg:w-[15%] text-left  leading-[28px]">
+              <div className="text-[12px] lg:w-[10%] text-left  leading-[28px]">
                 Date End
               </div>
-              <div className="text-[12px] lg:w-[12%] text-left leading-[25px] whitespace-nowrap lg:whitespace-wrap">
+              <div className="text-[12px] lg:w-[10%] text-left leading-[25px] whitespace-nowrap lg:whitespace-wrap">
                 Minimum DLR
               </div>
-              <div className="text-[12px] lg:w-[12%] text-left leading-[25px]">
+              <div className="text-[12px] lg:w-[10%] text-left leading-[25px]">
                 Status
               </div>
               {(activeItem === 2 || activeItem === 3) && (
                 <div className="text-sm font-w-600 leading-[12px] lg:w-[4%] text-left leading-[26px]"></div>
               )}
-              <div className="text-[12px] lg:w-[16%] text-left"></div>
-              <div className="text-[12px] lg:w-[13%] text-left"></div>
+              <div className="text-[12px] lg:w-[20%] text-left"></div>
+              <div className="text-[12px] lg:w-[10%] text-left"></div>
             </div>
             {gamesMap.map((game, index) => (
               <div key={index} className="mt-[27px] flex lg:block relative">
                 <div className="w-full lg:flex items-center justify-between border-blue-800 border-[2px] lg:mt-3 game-list-bg relative transition-all duration-500 border-green-100 mx-auto rounded-[16px] px-[14px] py-[7px] relative">
                   <SingleGameList
-                    className="text-[20px] font-w-700 leading-[28px] text-green-200 lg:pl-[10px] lg:w-[7%] text-left"
+                    className="text-[20px] font-w-700 leading-[28px] text-green-200 lg:pl-[10px] lg:w-[10%] text-left"
                     title={game.id}
                   />
                   <SingleGameList
-                    className="text-[20px] font-w-700 leading-[28px] lg:w-[10%] text-left"
+                    className="text-[20px] font-w-700 leading-[28px] lg:w-[20%] text-left break-words"
                     title={game.name}
                   />
                   <SingleGameList
-                    className="text-sm font-w-600 leading-[12px] text-green-200 lg:w-[15%] text-left leading-[25px]"
-                    title={game.startate}
+                    className="text-sm font-w-600 leading-[12px] text-green-200 lg:w-[10%] text-left leading-[25px]"
+                    title={moment(game.open_date).format("YYYY/MM/DD")}
                   />
                   <SingleGameList
-                    className="text-sm font-w-600 leading-[12px] text-green-200 lg:w-[15%] text-left leading-[25px]"
-                    title={game.enddate}
+                    className="text-sm font-w-600 leading-[12px] text-green-200 lg:w-[10%] text-left leading-[25px]"
+                    title={moment(game.close_date).format("YYYY/MM/DD")}
                   />
                   <SingleGameList
-                    className="text-[20px] font-w-700 leading-[28px] lg:w-[12%] text-left leading-[26px]"
-                    title={game.minimum_dlr}
+                    className="text-[20px] font-w-700 leading-[28px] lg:w-[10%] text-left leading-[26px]"
+                    title={game.enter_amount}
                   />
                   <SingleGameList
-                    className="text-sm font-w-600 leading-[12px] text-green-200 lg:w-[12%] text-left leading-[26px]"
-                    title={game.status}
+                    className="text-sm font-w-600 leading-[12px] text-green-200 lg:w-[10%] text-left leading-[26px]"
+                    title={game.status} // TO DO: get status from api
                   />
                   {(activeItem === 2 || activeItem === 3) && (
                     <div className="">
@@ -305,10 +323,10 @@ export default function Games() {
                       )}
                     </div>
                   )}
-                  <div className="lg:w-[16%] flex lg:justify-end">
+                  <div className="lg:w-[20%] flex lg:justify-end">
                     <Link
                       className="text-[14px] leading-[20px] font-w-700 inline-flex items-center  lg:justify-end leading-[26px]"
-                      href="/leaderboard"
+                      href={"/leaderboard/" + game.id}
                     >
                       Leaderboard
                       <svg
@@ -327,7 +345,7 @@ export default function Games() {
                   </div>
                   <Link
                     href={`/game`}
-                    className=" lg:w-[13%] text-right inline-block mt-2 lg:mt-0 "
+                    className=" lg:w-[10%] text-right inline-block mt-2 lg:mt-0 "
                   >
                     <ButtonMenu small={true} className="uppercase">
                       Play
