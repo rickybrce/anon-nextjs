@@ -2,7 +2,6 @@
 import React, { ReactNode, useEffect } from 'react'
 import LeftMenuSIngleItem from './LeftMenuSIngleItem'
 import Image from "next/image";
-import { getGames } from '../api/games';
 import { Preferences } from '@capacitor/preferences';
 import { useRouter } from "next/navigation";
 
@@ -24,7 +23,7 @@ const leftMenu = [
         iconUrl: "ic-buy.svg",
     },
     {
-        link: "/leaderboard",
+        link: "/leaderboard/1",
         title: "Scoreboard",
         iconUrl: "ic-activity.svg",
     },
@@ -53,14 +52,6 @@ const LeftMenu = ({ activeItem }: Props) => {
         setActive(!active)
     }
 
-    useEffect(() => {
-        //Get games
-        (async () => {
-          const games = await getGames(0, 100);
-          //console.log(games)
-        })();
-    
-    }, []);
 
     //Check if logged in
     useEffect(() => {

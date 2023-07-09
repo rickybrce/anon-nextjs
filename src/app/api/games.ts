@@ -70,6 +70,23 @@ export function getPastGames(skip: any, limit: any): any {
   });
 }
 
+export function getUserActiveGames(skip: any, limit: any): any {
+  const api = new Api();
+  return api.request({
+    endpoint: "games/user_active?skip="+skip+"&limit="+limit,
+    type: "GET",
+    auth: true
+  });
+}
+export function getUserPastGames(skip: any, limit: any): any {
+  const api = new Api();
+  return api.request({
+    endpoint: "games/user_past?skip="+skip+"&limit="+limit,
+    type: "GET",
+    auth: true
+  });
+}
+
 
 export function getGame(id: any): any {
   const api = new Api();

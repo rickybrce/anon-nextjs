@@ -15,6 +15,7 @@ type Props = {
 };
 
 const Balance = ({ type, title, value, ctaLabel, ctaLink, size }: Props) => {
+
   return (
     <div className={`${size === "small" ? "mt-3" : "mt-6"} w-full px-6`}>
       {title && (

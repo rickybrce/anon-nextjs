@@ -8,7 +8,13 @@ import SingleGameList from "../components/SingleGameList";
 import Link from "next/link";
 import ButtonMenu from "../components/buttons/ButtonMenu";
 import GamePopup from "../components/GamePopup";
-import { getActiveGames, getGames, getPastGames } from "../api/games";
+import {
+  getActiveGames,
+  getGames,
+  getPastGames,
+  getUserActiveGames,
+  getUserPastGames,
+} from "../api/games";
 import moment from "moment";
 
 const gamesMenu = [
@@ -26,7 +32,7 @@ const gamesMenu = [
   },
 ];
 
-const games = [
+/*const games = [
   {
     id: 1,
     name: "Game 1",
@@ -185,13 +191,15 @@ const mygames = [
       },
     ],
   },
-];
+];*/
 
 export default function Games() {
   const [activeItem, setActiveItem] = useState(0);
   const [displayPopup, setDisplayPopup] = useState(-1);
   const [activeGames, setActiveGames] = useState([]);
   const [pastGames, setPastGames] = useState([]);
+  const [userActiveGames, setUserActiveGames] = useState([]);
+  const [userPastGames, setUserPastGames] = useState([]);
 
   const handleActive = (e: any) => {
     setActiveItem(e);
@@ -203,12 +211,12 @@ export default function Games() {
   /*const pastGames = games.filter(
     (game) => game.active !== true && activeItem === 1
   );*/
-  const myactiveGames = mygames.filter(
+  /*const myactiveGames = mygames.filter(
     (game) => game.active === true && activeItem === 2
-  );
-  const mypastGames = mygames.filter(
+  );*/
+  /*const mypastGames = mygames.filter(
     (game) => game.active !== true && activeItem === 3
-  );
+  );*/
 
   const gamesMap =
     activeItem === 0
@@ -216,8 +224,8 @@ export default function Games() {
       : activeItem === 1
       ? pastGames
       : activeItem === 2
-      ? myactiveGames
-      : mypastGames;
+      ? userActiveGames
+      : userPastGames;
 
   const handlePopup = (index: any, activeItem: any) => {
     if (displayPopup === -1) {
@@ -232,14 +240,24 @@ export default function Games() {
     (async () => {
       const activegames = await getActiveGames(0, 1000);
       setActiveGames(activegames);
-      console.log(activegames)
+      //console.log(activegames);
     })();
+    //Get past games
     (async () => {
       const pastgames = await getPastGames(0, 1000);
       setPastGames(pastgames);
     })();
-
-}, []);
+    //Get user active games
+    (async () => {
+      const useractivegames = await getUserActiveGames(0, 1000);
+      setUserActiveGames(useractivegames);
+    })();
+    //Get user past games
+    (async () => {
+      const userpastgames = await getUserPastGames(0, 1000);
+      setUserPastGames(userpastgames);
+    })();
+  }, []);
 
   return (
     <main className="">
@@ -278,7 +296,7 @@ export default function Games() {
               <div className="text-[12px] lg:w-[20%] text-left"></div>
               <div className="text-[12px] lg:w-[10%] text-left"></div>
             </div>
-            {gamesMap.map((game, index) => (
+            {gamesMap.map((game: any, index) => (
               <div key={index} className="mt-[27px] flex lg:block relative">
                 <div className="w-full lg:flex items-center justify-between border-blue-800 border-[2px] lg:mt-3 game-list-bg relative transition-all duration-500 border-green-100 mx-auto rounded-[16px] px-[14px] py-[7px] relative">
                   <SingleGameList
@@ -347,9 +365,11 @@ export default function Games() {
                     href={`/game`}
                     className=" lg:w-[10%] text-right inline-block mt-2 lg:mt-0 "
                   >
-                    <ButtonMenu small={true} className="uppercase">
-                      Play
-                    </ButtonMenu>
+                    <Link href={`/game/${game.id}`}>
+                      <ButtonMenu small={true} className="uppercase">
+                        Play
+                      </ButtonMenu>
+                    </Link>
                   </Link>
                 </div>
               </div>
