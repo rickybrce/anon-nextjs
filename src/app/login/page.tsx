@@ -52,13 +52,14 @@ export default function LoginPage() {
           const messageToSign = response?.data;
           //console.log(messageToSign);
 
+
           if (!messageToSign) {
             throw new Error("Invalid message to sign");
           }
 
           const signer = await provider.getSigner();
-          const signature = await signer.signMessage(account);
           const address = await signer.getAddress();
+          const signature = await signer.signMessage(messageToSign);
           setAddress(address);
 
           //console.log("signature : " + signature);
@@ -91,7 +92,6 @@ export default function LoginPage() {
           formData.append('signature', bodyParams.signature)
 
 
-
           const headers = new Headers();
           headers.append("Content-type", "application/json");
           //headers.append("Accept", "application/json");
@@ -100,7 +100,7 @@ export default function LoginPage() {
             method: "POST",
             //body: bodyParams ? JSON.stringify(bodyParams) : null,
             body: formData,
-            mode: "no-cors",
+            //mode: "no-cors",
             headers,
           }).then(async (response: any) => {
             console.log(response);
