@@ -86,24 +86,25 @@ export default function LoginPage() {
 
           console.log(responseToken);*/
 
-          console.log(JSON.stringify(bodyParams) )
+          //console.log(JSON.stringify(bodyParams) )
 
           const formData = new FormData()
           formData.append('address', bodyParams.address)
           formData.append('siweMessage', bodyParams.siweMessage)
           formData.append('signature', bodyParams.signature)
 
+          console.log("Form data: ", bodyParams)
+
 
           const headers = new Headers();
           headers.append("Content-type", "application/json");
-          //headers.append("Accept", "application/json");
+          headers.append("Accept", "application/json");
 
-          return fetch(`${baseUrl}/login/access-token/`, {
+          return fetch(`${baseUrl}/login/access-token`, {
             method: "POST",
-            //body: bodyParams ? JSON.stringify(bodyParams) : null,
-            body: formData,
-            //mode: "no-cors",
-            headers,
+              body: bodyParams ? JSON.stringify(bodyParams) : null,
+              //body: formData,
+              headers,
           }).then(async (response: any) => {
             console.log(response);
             if (response.status === 422) {

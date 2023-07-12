@@ -79,7 +79,7 @@ export default function LoginPage() {
             'Access-Control-Allow-Origin': '*',
         };
           const responseToken = await axios.post(
-            `${baseUrl}/login/access-token/`,
+            `${baseUrl}/login/access-token`,
             bodyParams
           );
 

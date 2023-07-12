@@ -22,7 +22,7 @@ const TopNavigation = ({ }: Props) => {
         //Redirect to login
         router.push('/login-dummy')
     }
-  
+
     return (
         <div className="w-full bg-sidebar border-[3px] border-green-100 rounded-[16px] p-[20px] md:flex items-center justify-between">
             <div className='flex items-center mb-4 lg:mb-0'>
@@ -46,21 +46,21 @@ const TopNavigation = ({ }: Props) => {
             <Link href="#" className='ml-23xl:ml-[28px]'>
                 <ButtonMenu>How2play</ButtonMenu>
             </Link>
-            <Link href="#" className='ml-2 3xl:ml-[16px]'>
+            <Link href="/gmaes" className='ml-2 3xl:ml-[16px]'>
                 <ButtonMenu>Games</ButtonMenu>
             </Link>
             <div>
                 <Link href="#" className='ml-1 3xl:ml-[16px]'>
                     <ButtonMenu>Burn KIN</ButtonMenu>
                 </Link>
-                <Link href="#" className='ml-[10px]'>
+                <Link href="/burn" className='ml-[10px]'>
                     <ButtonMenu>Buy KIN</ButtonMenu>
                 </Link>
             </div>
 
-            
-                <ButtonMenu onClick={()=> handlelogout ? handlelogout() : ""}>Logout</ButtonMenu>
-            
+
+            <ButtonMenu onClick={() => handlelogout ? handlelogout() : ""}>Logout</ButtonMenu>
+
         </div>
     )
 }
