@@ -20,7 +20,7 @@ const TopNavigation = ({ }: Props) => {
         //Remove token
         await Preferences.remove({ key: "token" });
         //Redirect to login
-        router.push('/login-dummy')
+        router.push('/login')
     }
 
     return (

@@ -46,7 +46,7 @@ const LeftMenu = ({ activeItem }: Props) => {
         //Remove token
         await Preferences.remove({ key: "token" });
         //Redirect to login
-        router.push('/login-dummy')
+        router.push('/login')
     }
     const handlemenu = () => {
         setActive(!active)
@@ -59,7 +59,7 @@ const LeftMenu = ({ activeItem }: Props) => {
           const token = await Preferences.get({ key: "token" });
           if (token.value !== null) {
           } else {
-            router.push('/login-dummy')
+            router.push('/login')
           }
         })();
       }, []);

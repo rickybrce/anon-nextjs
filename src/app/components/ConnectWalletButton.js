@@ -9,7 +9,7 @@ const ConnectWalletButton = ({
   return (
     <div>
       {address && !loading ? (
-        <button onClick={onPressLogout} className={styles["connect-wallet"]}>
+        <button type="submit" onClick={onPressLogout} className={styles["connect-wallet"]}>
           Disconnect
         </button>
       ) : loading ? (
