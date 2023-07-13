@@ -4,10 +4,10 @@ import content from "../../../public/static/locales/en/common.json";
 import ButtonSeeAll from "./buttons/ButtonSeeAll";
 import SingleStatistic from "./SIngleStatistic";
 import Title from "./Title";
-import { getGames } from "../api/games";
 import Link from "next/link";
+import { getBurTokenDlrRatio, getNumUserGames, getTokenPrice, getUserPlacedBetsActiveGames, getUserSumPrizePool } from "../api/stats";
 
-const games = [
+/*const games = [
   {
     title: "Weekly prize",
     value: "11,000$",
@@ -38,20 +38,49 @@ const games = [
     value: "0.5 eth",
     image: "/images/ic-cart.svg",
   },
-];
+];*/
 
 type Props = {};
 
 const Statistic = ({}: Props) => {
-  const [gamesNum, setGamesNum] = React.useState([]);
+  const [weeklyPrize, setWeeklyPrize] = React.useState(0);
+  const [gamesNum, setGamesNum] = React.useState(0);
+  const [activeUsers, setActiveUsers] = React.useState(0);
+  const [kinPercentage, setKinPercentage] = React.useState(0);
+  const [kinBurned, setKinBurned] = React.useState(0);
+  const [kinPrice, setKinyPrice] = React.useState(0);
+
   useEffect(() => {
-    //Get games
+    //Get games num
     (async () => {
-      const games = await getGames(0, 1000);
+      const items = await getNumUserGames();
       //Set total games
-      games && setGamesNum(games.length);
-      //console.log(games)
+      items && setGamesNum(items);
     })();
+    //Get UserSumPrizePool TODO : Server Error
+    /*(async () => {
+      const items = await getUserSumPrizePool();
+      //Set price pool
+      items && setWeeklyPrize(items);
+    })();*/
+    //Get active useers
+    (async () => {
+      const items = await getUserPlacedBetsActiveGames();
+      //Set active useers
+      items && setActiveUsers(items);
+    })();
+    //Get kin percentage TODO : Server Error
+    /*(async () => {
+      const items = await getBurTokenDlrRatio();
+      //Set kin percentage
+      items && setKinPercentage(items);
+    })();*/
+    //Get kin burned TODO : Server Error
+    /*(async () => {
+      const items = await getTokenPrice();
+      //Set kin percentage
+      items && setKinyPrice(items);
+    })();*/
   }, []);
 
   return (
@@ -67,7 +96,7 @@ const Statistic = ({}: Props) => {
       <div className="grid md:grid-cols-3 xl:grid-cols-3">
         <SingleStatistic
           title="Weekly prize"
-          value="11,000$"
+          value={weeklyPrize ? weeklyPrize.toString() + "$" : "0$"}
           image="/images/ic-pie.svg"
           index={0}
         />
@@ -79,23 +108,23 @@ const Statistic = ({}: Props) => {
         />
         <SingleStatistic
           title="Active users"
-          value="0.5 eth"
+          value={activeUsers ? activeUsers.toString() : "0"}
           image="/images/ic-eth.svg"
           index={2}
         />
         <SingleStatistic
           title="% KIN ..."
-          value="21%"
+          value={kinPercentage ? kinPercentage.toString() + "%" : "0%"}
           image="/images/ic-kin.svg"
         />
         <SingleStatistic
           title="% of KIN burned"
-          value="15%"
+          value={kinBurned ? kinBurned.toString() + "%" : "0%"}
           image="/images/ic-glass.svg"
         />
         <SingleStatistic
           title="KIN price"
-          value="0.5 eth"
+          value={kinPrice ? kinPrice.toString() + "$" : "0$"}
           image="/images/ic-cart.svg"
         />
       </div>
