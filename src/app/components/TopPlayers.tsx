@@ -1,8 +1,9 @@
 "use client"; // This is a client component
-import React, { ReactNode } from 'react'
+import React, { ReactNode, useEffect } from 'react'
 import content from '../../../public/static/locales/en/common.json'
 import SinglePlayer from './SInglePlayer';
 import Image from "next/image";
+import { getTopPlayers } from '../api/stats';
 
 
 const players = [
@@ -58,6 +59,18 @@ type Props = {
 }
 
 const TopPlayers = ({ }: Props) => {
+    const [topPlayers, setTopPlayers] = React.useState([]);
+
+    useEffect(() => {
+        //Get top players
+        (async () => {
+          const items = await getTopPlayers();
+          //Set top players
+          items && setTopPlayers(items);
+          console.log(items);
+        })();
+    
+      }, []);
 
     return (
         <div className="w-full mt-[60px] pl-[19px]">

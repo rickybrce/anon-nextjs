@@ -85,7 +85,7 @@ export default function LoginPage() {
 
           console.log(responseToken);*/
 
-          console.log(JSON.stringify(bodyParams));
+          //console.log(JSON.stringify(bodyParams));
 
           //Dummy login
           const headers = new Headers();
@@ -103,7 +103,7 @@ export default function LoginPage() {
           )
             .then(async (response) => response.json())
             .then(async (data) => {
-              console.log(data);
+              //console.log(data);
               await Preferences.set({
                 key: "token",
                 value: data.access_token,

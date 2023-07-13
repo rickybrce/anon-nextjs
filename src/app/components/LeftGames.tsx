@@ -45,7 +45,6 @@ const LeftGames = ({}: Props) => {
     //Get games
     (async () => {
       const activegames = await getActiveGames(0, 3);
-      console.log(activegames);
       setUserActiveGames(activegames);
     })();
     //Get user games

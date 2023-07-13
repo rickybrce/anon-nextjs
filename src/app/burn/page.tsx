@@ -156,8 +156,7 @@ export default function Home() {
       coin_price
   )
       .then(async (response : any) => {
-
-         console.log(response)
+         //console.log(response)
 
       })
       .catch((error: any) => {

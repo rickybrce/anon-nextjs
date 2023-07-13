@@ -24,7 +24,7 @@ const LeftHotGame = ({}: Props) => {
     //Get games
     (async () => {
       const hotgame = await getActiveGames(0, 1);
-      console.log(hotgame);
+      //console.log(hotgame);
       setUserHotGame(hotgame[0]);
     })();
     //Get user games
